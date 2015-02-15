@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+        <link href="{% static 'css/bootstrap-marketing-adj.css' %}" rel="stylesheet">
+        <link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet">
+        <link href="{% static 'css/socialunderground.css' %}" rel="stylesheet">
+
+        <title>The Social Undergound</title>
+
+    </head>
+
+    <body>
+
+
+    <div class="jumbotron">
+        <img src="{% static 'Logo-small.png' %}" alt="The Social Underground" />
+
+        <p class="lead">Putting your Facebook friends on the London Underground</p>
+        <img src="{% static 'tube-map.png' %}" alt="London Underground Map" />
+        <p>Ever wanted to see what your social network would look like as a tube map? Get started by following the steps below to grab your social network data.</p>
+    </div>
+    <div class="container">
+        <div class="text-center">
+            <div class="centerBox">
+                <ol class="text-left">
+                    <li>Head over to the <a href="http://snacourse.com/getnet/">NetGet</a> website (try opening it in another tab so you can still see these instructions)</li>
+                    <li>Give NetGet permission to access your Facebook profile so it can grab your friend list</li>
+                    <li>Once the page loads, leave all the checkboxes empty and click the <strong>here</strong> link in <strong>Step 2</strong></li>
+                    <li>Wait for GetNet to finish collecting your social data, this can take a few minutes</li>
+                    <li>Once it's complete, right click on <strong>gml file</strong> and click 'Save As' to save your social data onto your computer</li>
+                    <li>Upload your social data by clicking the button below!</li>
+                </ol>
+                <form action="" method="post" enctype="multipart/form-data">
+                    {{ form.file }}
+                    {% csrf_token %}
+                    <label class="btn btn-large btn-success" for="my-file-selector">
+                        <input id="my-file-selector" type="file" style="display:none;" name="docfile" onchange="window.setTimeout(getStatusMessage, 500);submit()">
+                        Upload Social Data
+                    </label>
+                </form>
+                <span class="label label-info " id='status'></span>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/socialunderground.js' %}"></script>
+
+    </body>
+
+</html>

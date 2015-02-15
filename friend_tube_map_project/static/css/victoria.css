@@ -1,0 +1,206 @@
+#victoria .route,
+#victoria .station{
+    background-color: #009ddc;
+    z-index: 10;
+}
+#vic001{
+	top: 590px;
+	left: 3203px;
+}
+#vic001 strong{
+	left: 3px;
+	top: 34px;
+	width: auto;
+}
+#vic001 .rail-symbol{
+	top: 21px;
+	left: 112px;
+}
+#vic002{
+	top: 590px;
+	left: 3050px;
+}
+#vic002 strong{
+	top: -41px;
+	left: 88px;
+}
+#vic003{
+	top: 590px;
+	left: 2969px;
+}
+#vic003 strong{
+	top: 38px;
+	left: 17px;
+}
+#vic003 .rail-symbol{
+	top: 23px;
+	left: 87px;
+}
+#vic004{
+	top: 590px;
+	left: 2877px;
+}
+#vic004 .rail-symbol{
+	top: 22px;
+	left: 101px;
+}
+#vic005{
+	top: 633px;
+	left: 2732px;
+}
+#vic006{
+	top: 802px;
+	left: 2618px;
+}
+#vic006 strong{
+	top: -44px;
+	left: 87px;
+}
+#vic006 .rail-symbol{
+	top: 22px;
+	left: 90px;
+}
+#vic007{
+	top: 1027px;
+	left: 2247px;
+}
+#vic008{
+	top: 1048px;
+	left: 2141px
+}
+#vic009{
+	top: 1148px;
+	left: 2042px;
+}
+#vic010{
+	top: 1901px;
+	left: 1751px;
+}
+#vic011{
+	top: 2076px;
+	left: 1782px;
+}
+#vic011 strong{
+	top: 13px;
+	right: 17px;
+	height: 34px;
+	width: 92px;
+}
+#vic011 .boat-symbol{
+	top: 29px;
+	right: 37px;
+}
+#vic011 .rail-symbol{
+	top: 31px;
+	left: 70px;
+}
+#vic012{
+	top: 2253px;
+	left: 1958px;
+}
+#vic012 strong{
+	left: 33px;
+	top: 1px;
+}
+#vic013{
+	top: 2361px;
+	left: 2067px;
+}
+#vic013 .rail-symbol{
+	top: 20px;
+	left: 76px;
+}
+#vic014{
+	top: 602px;
+	left: 2805px;
+	width: 400px;
+}
+#vic015{
+	top: 602px;
+	left: 2776px;
+}
+#vic016{
+	top: 680px;
+	left: 2614px;
+	width: 200px;
+}
+#vic017{
+	top: 751px;
+	left: 2627px;
+}
+#vic018{
+	top: 776px;
+	left: 2631px;
+	height: 175px;
+	z-index: 6 !important;
+}
+#vic019{
+	top: 954px;
+	left: 2614px;
+	z-index: -1! important;
+}
+#vic020{
+	top: 999px;
+	left: 2553px;
+	width: 90px;
+}
+#vic021{
+	top: 1026px;
+	left: 2543px;
+}
+#vic022{
+	top: 1039px;
+	left: 2194px;
+	width: 349px;
+	z-index: -2 !important;
+}
+#vic023{
+	top: 1039px;
+	left: 2164px;
+	z-index: 11 !important;
+}
+#vic023:after{
+	height: 24px;
+	width: 25px;
+	border-radius: 0 0 30px 0;
+	top: -11px;
+	left: 0px;
+}
+#vic024{
+	top: 1251px;
+	left: 1686px;
+	width: 565px;
+	z-index: 0 !important;
+}
+#vic025{
+	top: 1449px;
+	left: 1755px;
+}
+#vic026{
+	top: 1474px;
+	left: 1759px;
+	height: 571px;
+}
+#vic027{
+	top: 2048px;
+	left: 1755px;
+}
+#vic028{
+	top: 2222px;
+	left: 1702px;
+	width: 460px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

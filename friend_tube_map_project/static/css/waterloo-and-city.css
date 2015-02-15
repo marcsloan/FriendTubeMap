@@ -1,0 +1,29 @@
+#waterloo-and-city .route,
+#waterloo-and-city .station{
+    background-color: #85cebc;
+    z-index: 10;
+}
+#wat001{
+	top: 1803px;
+	left: 2105px;
+	width: 226px;
+}
+#wat002{
+	top: 1790px;
+	left: 2325px;
+}
+#wat003{
+	top: 1738px;
+	left: 2325px;
+	width: 160px;
+}
+#wat004{
+	top: 1672px;
+	left: 2443px;
+}
+#wat005{
+	top: 1452px;
+	left: 2460px;
+	height: 217px;
+	z-index: -3 !important;
+}

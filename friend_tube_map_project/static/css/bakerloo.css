@@ -1,0 +1,225 @@
+#bakerloo .route,
+#bakerloo .station{
+    background-color: #b06110; 
+    z-index: 10;
+}
+#bak001{
+	top: 393px;
+	left: 1108px;
+}
+#bak001 strong{
+	right: 39px;
+	top: -8px;
+}
+#bak001 .rail-symbol{
+	top: 1px;
+	left: 3px;
+}
+#bak002{
+	top: 465px;
+	left: 1125px;
+}
+#bak003{
+	top: 593px;
+	left: 1108px;
+}
+#bak004{
+	top: 639px;
+	left: 1108px;
+}
+#bak005{
+	top: 673px;
+	left: 1108px;
+}
+#bak006{
+	top: 732px;
+	left: 1108px;
+}
+#bak007{
+	top: 778px;
+	left: 1108px;
+}
+#bak008{
+	top: 828px;
+	left: 1108px;
+}
+#bak008 strong{
+	right: 21px;
+	top: -23px;
+	padding-right: 8px;
+}
+#bak009{
+	top: 886px;
+	left: 1125px;
+}
+#bak010{
+	top: 916px;
+	left: 1108px;
+}
+#bak011{
+	top: 996px;
+	left: 1125px;
+}
+#bak012{
+	top: 1032px;
+	left: 1162px;
+}
+#bak013{
+	top: 1066px;
+	left: 1195px;
+}
+#bak014{
+	top: 1064px;
+	left: 1313px;
+}
+#bak014 .rail-symbol{
+	top: 21px;
+	left: 124px;
+}
+#bak015{
+	top: 1069px;
+	left: 1472px;
+}
+#bak016{
+	top: 1064px;
+	left: 1579px;
+}
+#bak016 .rail-symbol{
+	top: 21px;
+	left: 125px;
+}
+#bak017{
+	top: 1147px;
+	left: 1716px;
+}
+#bak018{
+	top: 1228px;
+	left: 1807px;
+}
+#bak018 strong{
+	top: -11px;
+	left: 21px;
+}
+#bak019{
+	top: 1585px;
+	left: 2041px;
+}
+#bak019 .rail-symbol{
+	top: 2px;
+	left: -27px;
+}
+#bak020{
+	top: 1711px;
+	left: 2075px;
+}
+#bak020 strong{
+	top: 3px;
+	left: 33px;
+}
+#bak020 .rail-symbol{
+	top: 0;
+	right: -40px;
+}
+#bak020 .boat-symbol{
+	top: 0px;
+	right: -38px;
+}
+#bak021{
+	top: 1792px;
+	left: 2075px;
+}
+#bak022{
+	top: 1989px;
+	left: 2096px;
+}
+#bak022 strong{
+	top: -14px;
+}
+#bak023{
+	top: 2080px;
+	left: 2130px;
+}
+#bak023 strong{
+	top: 11px;
+	left: 13px;
+	padding-left: 13px;
+	width: 208px;
+	padding-right: 10px;
+}
+#bak023 .rail-symbol{
+	top: 12px;
+	left: 200px;
+}
+#bak024{
+	top: 421px;
+	left: 1115px;
+	height: 545px;
+}
+#bak025{
+	top: 967px;
+	left: 1111px;
+	z-index: -1 !important;
+}
+#bak026{
+	top: 1024px;
+	left: 1108px;
+	width: 125px;
+}
+#bak027{
+	top: 1063px;
+	left: 1207px;
+}
+#bak028{
+	top: 1076px;
+	left: 1238px;
+	width: 398px;
+}
+#bak029{
+	top: 1076px;
+	left: 1634px;
+}
+#bak030{
+	top: 1178px;
+	left: 1610px;
+	width: 282px;
+	z-index: -1 !important;
+}
+#bak031{
+	top: 1286px;
+	left: 1841px;
+}
+#bak032{
+	top: 1299px;
+	left: 1856px;
+	height: 91px;
+}
+#bak033{
+	top: 1392px;
+	left: 1852px;
+	z-index: -2 !important;
+}
+#bak034{
+	top: 1514px;
+	left: 1824px;
+	width: 305px;
+}
+#bak035{
+	top: 1627px;
+	left: 2071px;
+	z-index: -3 !important;
+}
+#bak036{
+	top: 1643px;
+	left: 2086px;
+	height: 386px;
+	z-index: -1 !important;
+}
+#bak037{
+	top: 2028px;
+	left: 2082px;
+}
+#bak038{
+	top: 2067px;
+	left: 2082px;
+	width: 84px;
+}

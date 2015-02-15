@@ -1,0 +1,285 @@
+#metropolitan .route,
+#metropolitan .station{
+    background-color: #98005d;
+}
+#met001{
+	left: 42px;
+	top: 131px;
+}
+#met001 .rail-symbol{
+	left: 7px;
+	top: 22px;
+}
+#met001 strong{
+	top: 33px;
+	left: 50px;
+}
+#met002{
+	left: 136px;
+	top: 77px;
+}
+#met002 strong{
+	top: -38px;
+	right: 34px;
+}
+#met003{
+	left: 299px;
+	top: 131px;
+}
+#met003 .rail-symbol{
+	left: 106px;
+	top: 24px;
+}
+#met004{
+	left: 459px;
+	top: 164px;
+}
+#met004 strong{
+	left: -75px;
+	top: 28px;
+}
+#met005{
+	left: 521px;
+	top: 236px
+}
+#met005 strong{
+	right: 19px;
+	top: 11px;
+}
+#met006{
+	left: 535px;
+	top: 142px;
+	width: 25px;
+}
+#met006 strong{
+	left: 29px;
+}
+#met007{
+	left: 553px;
+	top: 196px;
+}
+#met008{
+	left: 571px;
+	top: 263px;
+	z-index: 11 !important;
+}
+#met008 strong{
+	padding-left: 15px;
+	top: -26px;
+	left: 23px;
+}
+#met009{
+	left: 620px;
+	top: 312px;
+}
+#met010{
+	left: 670px;
+	top: 362px;
+}
+#met010 strong{
+	top: -25px;
+	left: 37px;
+}
+#met011{
+	left: 717px;
+	top: 421px
+}
+#met012{
+	left: 780px;
+	top: 472px
+}
+#met013{
+	left: 773px;
+	top: 567px;
+}
+#met014{
+	left: 884px;
+	top: 544px;
+}
+#met014 strong{
+	top: -46px;
+	left: 15px;
+}
+#met014 .rail-symbol{
+	top: 2px;
+	left: -8px;
+}
+#met015{
+	left: 1051px;
+	top: 549px;
+}
+#met016{
+	left: 1190px;
+	top: 549px;
+}
+#met017{
+	left: 1270px;
+	top: 620px;
+}
+#met017 strong{
+	top: 32px;
+	right: 31px;
+}
+#met018{
+	left: 1551px;
+	top: 902px;
+}
+#met018 strong{
+	top: -46px;
+	left: 108px;
+}
+#met019{
+	left: 1755px;
+	top: 1107px;
+}
+#met019 strong{
+	left: 41px;
+	top: -51px;
+}
+#met020{
+	left: 2133px;
+	top: 1139px;
+}
+#met021{
+	left: 2420px;
+	top: 1250px;
+}
+#met021 strong{
+	right: -8px;
+	top: -14px;
+}
+#met022{
+	left: 2748px;
+	top: 1431px;
+	width: 10px;
+}
+#met023{
+	top: 143px;
+	left: 72px;
+	width: 361px;
+}
+#met024{
+	top: 143px;
+	left: 429px;
+}
+#met025{
+	top: 353px;
+	left: 368px;
+	width: 572px;
+	z-index: 11 !important;
+}
+#met026{
+	top: 143px;
+	left: 543px;
+	height: 110px
+}
+#met027{
+	left: 140px;
+	top: 116px;
+	width: 80px;
+	z-index: 11 !important;
+}
+#met028{
+	left: 191px;
+	top: 130px;
+}
+#met029{
+	left: 539px;
+	top: 241px;
+	z-index: -11 !important;
+}
+#met030{
+	left: 842px;
+	top: 544px
+}
+#met031{
+	top: 401px;
+	left: 79px;
+	width: 407px;
+}
+#met032{
+	top: 401px;
+	left: 481px;
+	z-index: 8 !important;
+}
+#met033{
+	top: 479px;
+	left: 472px;
+	width: 205px;
+}
+#met034{
+	top: 544px;
+	left: 637px;
+}
+#met035{
+	top: 557px;
+	left: 663px;
+	width: 540px;
+	z-index: 11 !important;
+}
+#met036{
+	top: 557px;
+	left: 1197px;
+}
+#met037{
+	top: 835px;
+	left: 1105px;
+	width: 770px;
+	z-index: 11 !important;
+}
+#met038{
+	top: 1116px;
+	left: 1769px;
+}
+#met039{
+	top: 1129px;
+	left: 1800px;
+	width: 505px;
+	z-index: 1 !important
+}
+#met040{
+	top: 1129px;
+	left: 2299px;
+}
+#met041{
+	top: 1204px;
+	left: 2288px;
+	width: 203px;
+	z-index: 11 !important;
+}
+#met042{
+	top: 1267px;
+	left: 2450px;
+}
+#met043{
+	top: 1280px;
+	left: 2480px;
+	width: 258px;
+	z-index: 11 !important;
+}
+#met044{
+	top: 1280px;
+	left: 2735px;
+}
+#met045{
+	top: 1311px;
+	left: 2756px;
+	height: 120px;
+}
+#met046{
+	left: 446px;
+	top: 393px;
+}
+#met047{
+	left: 520px;
+	top: 419px;
+}
+#met048{
+	left: 574px;
+	top: 472px;
+}
+#met049{
+	top: 1121px;
+	left: 1903px;
+	z-index: 11 !important;
+}

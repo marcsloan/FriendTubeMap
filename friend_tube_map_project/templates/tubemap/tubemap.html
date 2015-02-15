@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The Social Underground</title>
+    <link href="{% static 'css/styles.css?v=1.0' %}" rel="stylesheet">
+    <link href="{% static 'css/socialunderground.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+	<div class="wrapper">
+		<a href="/tubemap/reload/" class="btn btn-large btn-success">Think the map could be better? Click here to try again</a></button>
+        <a href="/tubemap/feedback.html" class="btn btn-large btn-success">Feedback</a></button>
+		<nav>
+			<ul>
+				<li class="info"><a href="/tubemap/info.html">about</a></li>
+				<!--<li class="twitter"><a href="http://www.twitter.com/johngalantini85" target="_blank">@johngalantini85</a></li>-->
+				<!--<li class="beck"><a href="http://en.wikipedia.org/wiki/Harry_Beck" target="_blank">Wikipedia: Harry Beck</a></li>-->
+				<!--<li class="john"><a href="http://www.johngalantini.com" target="_blank">johngalantini.com</a></li>-->
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<section id="map-container">
+
+	<ul id="central" class="line">
+		<li id="cen001" class="roundel connection"><strong class="left">{{ West_Ruislip }}</strong></li>
+		<li id="cen002" class="route vertical"></li>
+		<li id="cen003" class="station"><strong class="left two-lines">{{ Ruislip_Gardens }}</strong></li>
+		<li id="cen004" class="roundel connection"><strong class="left">{{ South_Ruislip }}</strong></li>
+		<li id="cen005" class="station"><strong class="left">{{ Northolt }}</strong></li>
+		<li id="cen006" class="roundel connection rot315"><strong class="left">{{ Greenford }}</strong></li>
+		<li id="cen007" class="station rot315"><strong class="left">{{ Perivale }}</strong></li>
+		<li id="cen008" class="station rot315"><strong class="left">{{ Hanger_Lane }}</strong></li>
+		<li id="cen009" class="roundel connection"><strong class="left">{{ Ealing_Broadway }}</strong></li>
+		<li id="cen010" class="station vertical"><strong class="below">{{ West_Acton }}</strong></li>
+		<li id="cen011" class="station vertical"><strong class="below">{{ North_Acton }}</strong></li>
+		<li id="cen012" class="station vertical"><strong class="above">{{ East_Acton }}</strong></li>
+		<li id="cen013" class="roundel connection"><strong class="above">{{ White_City }}</strong></li>
+		<li id="cen014" class="roundel connection"><strong class="above">{{ Shepherds_Bush }}</strong></li>
+		<li id="cen015" class="station vertical"><strong class="below">{{ Holland_Park }}</strong></li>
+		<li id="cen016" class="roundel connection"><strong class="above">{{ Notting_Hill_Gate }}</strong></li>
+		<li id="cen017" class="station vertical"><strong class="below">{{ Queensway }}</strong></li>
+		<li id="cen018" class="station vertical"><strong class="above">{{ Lancaster_Gate }}</strong></li>
+		<li id="cen019" class="station vertical"><strong class="below">{{ Marble_Arch }}</strong></li>
+		<li id="cen020" class="roundel connection"><strong class="above">{{ Bond_Street }}</strong></li>
+		<li id="cen021" class="roundel connection"><strong class="above">{{ Oxford_Circus }}</strong></li>
+		<li id="cen022" class="roundel connection"><strong class="below">{{ Tottenham_Court_Road }}</strong></li>
+		<li id="cen023" class="roundel connection"><strong class="below">{{ Holborn }}</strong></li>
+		<li id="cen024" class="station vertical"><strong class="above">{{ Chancery_Lane }}</strong></li>
+		<li id="cen025" class="station rot315"><strong class="right">{{ St_Pauls }}</strong></li>
+		<li id="cen026" class="roundel connection"><strong class="above">{{ Bank }}</strong></li>
+		<li id="cen027" class="roundel connection"></li>
+		<li id="cen028" class="station vertical"><strong class="above">{{ Bethnal_Green }}</strong></li>
+		<li id="cen029" class="roundel connection"><strong class="above">{{ Mile_End }}</strong></li>
+		<li id="cen030" class="roundel disabled"><strong class="right">{{ Stratford }}</strong></li>
+		<li id="cen031" class="station"><strong class="left">{{ Leyton }}</strong></li>
+		<li id="cen032" class="station"><strong class="left">{{ Leytonstone }}</strong></li>
+		<li id="cen033" class="station"><strong class="left">{{ Snaresbrook }}</strong></li>
+		<li id="cen034" class="station"><strong class="left">{{ South_Woodford }}</strong></li>
+		<li id="cen035" class="roundel disabled"><strong class="left">{{ Woodford }}</strong></li>
+		<li id="cen036" class="station"><strong class="left">{{ Buckhurst_Hill }}</strong></li>
+		<li id="cen037" class="station"><strong class="left">{{ Loughton }}</strong></li>
+		<li id="cen038" class="station"><strong class="left">{{ Debden }}</strong></li>
+		<li id="cen039" class="station"><strong class="left">{{ Theydon_Bois }}</strong></li>
+		<li id="cen040" class="roundel disabled"><strong class="left">{{ Epping }}</strong></li>
+		<li id="cen041" class="roundel disabled"><strong class="above">{{ Roding_Valley }}</strong></li>
+		<li id="cen042" class="station vertical"><strong class="below wide">{{ Chigwell }}</strong></li>
+		<li id="cen043" class="station vertical"><strong class="above">{{ Grange_Hill }}</strong></li>
+		<li id="cen044" class="roundel disabled"><strong class="left">{{ Hainault }}</strong></li>
+		<li id="cen045" class="station"><strong class="left">{{ Fairlop }}</strong></li>
+		<li id="cen046" class="station"><strong class="left">{{ Barkingside }}</strong></li>
+		<li id="cen047" class="station"><strong class="left">{{ Newbury_Park }}</strong></li>
+		<li id="cen048" class="station vertical"><strong class="below">{{ Gants_Hill }}</strong></li>
+		<li id="cen049" class="station vertical"><strong class="above wide"><br/>{{ Redbridge }}</strong></li>
+		<li id="cen050" class="station vertical"><strong class="below">{{ Wanstead }}</strong></li>
+		<li id="cen051" class="route horizontal"></li>
+		<li id="cen052" class="route diagonal"></li>
+		<li id="cen053" class="route bend45deg rot90 flipped"></li>
+		<li id="cen054" class="route bend45deg rot180"></li>
+		<li id="cen055" class="route diagonal"></li>
+		<li id="cen056" class="route bend45deg"></li>
+		<li id="cen057" class="route"></li>
+		<li id="cen058" class="route diagonal rot315"></li>
+		<li id="cen059" class="route bend45deg rot180"></li>
+		<li id="cen060" class="route bend45deg flipped"></li>
+		<li id="cen061" class="route"></li>
+		<li id="cen062" class="route bend45deg rot180 flipped"></li>
+		<li id="cen063" class="route bend45deg flipped"></li>
+		<li id="cen064" class="route diagonal rot315"></li>
+		<li id="cen065" class="route vertical"></li>
+		<li id="cen066" class="route bend45deg rot90"></li>
+		<li id="cen067" class="route horiztontal"></li>
+		<li id="cen068" class="route horiztonal"></li>
+		<li id="cen069" class="route vertical"></li>
+		<li id="cen070" class="route bend90deg"></li>
+		<li id="cen071" class="route bend90deg rot270"></li>
+		<li id="cen072" class="route bend90deg rot270"></li>
+		<li id="cen073" class="route bend90deg rot90"></li>
+	</ul>
+
+	<ul id="piccadilly" class="line">
+		<li id="pic001" class="roundel disabled"><strong class="below">{{ Uxbridge }}</strong></li>
+		<li id="pic002" class="roundel disabled"><strong class="above">{{ Hillingdon }}</strong></li>
+		<li id="pic003" class="station vertical"><strong class="below">{{ Ickenham }}</strong></li>
+		<li id="pic004" class="station vertical"><strong class="above">{{ Ruislip }}</strong></li>
+		<li id="pic005" class="station rot315"><strong class="right">{{ Ruislip_Manor }}</strong></li>
+		<li id="pic006" class="station rot315"><strong class="right">{{ Eastcote }}</strong></li>
+		<li id="pic007" class="roundel connection rot315"><strong class="left">{{ Rayners_Lane }}</strong></li>
+		<li id="pic008" class="station"><strong class="left">{{ South_Harrow }}</strong></li>
+		<li id="pic009" class="station"><strong class="left">{{ Sudbury_Hill }}</strong></li>
+		<li id="pic010" class="roundel disabled"><strong class="left">{{ Sudbury_Town }}</strong></li>
+		<li id="pic011" class="station"><strong class="left">{{ Alperton }}</strong></li>
+		<li id="pic012" class="station"><strong class="left">{{ Park_Royal }}</strong></li>
+		<li id="pic013" class="station"><strong class="left">{{ North_Ealing }}</strong></li>
+		<li id="pic014" class="roundel connection"><strong class="left">{{ Ealing_Common }}</strong></li>
+		<li id="pic015" class="roundel disabled"><strong class="right above wide">{{ Acton_Town }}</strong></li>
+		<li id="pic016" class="station rot45"><strong class="left">{{ South_Ealing }}</strong></li>
+		<li id="pic017" class="station rot45"><strong class="left">{{ Northfields }}</strong></li>
+		<li id="pic018" class="station rot45"><strong class="left">{{ Boston_Manor }}</strong></li>
+		<li id="pic019" class="station rot45"><strong class="left">{{ Osterley }}</strong></li>
+		<li id="pic020" class="roundel disabled"><strong class="right below wide">{{ Hounslow_East }}</strong></li>
+		<li id="pic021" class="station rot45"><strong class="right below wide">{{ Hounslow_Central }}</strong></li>
+		<li id="pic022" class="roundel disabled navy"><strong class="left above">{{ Hounslow_West }}</strong></li>
+		<li id="pic023" class="station rot45"><strong class="left">{{ Hatton_Cross }}</strong></li>
+		<li id="pic024" class="roundel disabled navy"><strong class="left above">{{ Heathrow_Terminals_1_2_3 }}</strong></li>
+		<li id="pic025" class="roundel disabled"><strong class="right plane navy">{{ Heathrow_Terminal_4 }}</strong></li>
+		<li id="pic026" class="roundel disabled"><strong class="right below wide">{{ Heathrow_Terminal_5 }}</strong></li>
+		<li id="pic027" class="station vertical"></li>
+		<li id="pic028" class="roundel disabled linked"><strong class="left above wide">{{ Hammersmith }}</strong></li>
+		<li id="pic029" class="station vertical"><strong class="above">{{ Barons_Court }}</strong></li>
+		<li id="pic030" class="roundel disabled navy"><strong class="below">{{ Earls_Court }}</strong></li>
+		<li id="pic031" class="station vertical"><strong class="above">{{ Gloucester_Road }}</strong></li>
+		<li id="pic032" class="roundel connection"><strong class="below">{{ South_Kensington }}</strong></li>
+		<li id="pic033" class="station rot45"><strong class="left">{{ Knightsbridge }}</strong></li>
+		<li id="pic034" class="station rot45"><strong class="left">{{ Hyde_Park_Corner }}</strong></li>
+		<li id="pic035" class="roundel disabled navy"><strong class="above wide">{{ Green_Park }}</strong></li>
+		<li id="pic036" class="roundel connection"><strong class="below">{{ Piccadilly_Circus }}</strong></li>
+		<li id="pic037" class="roundel connection"><strong class="below right wide">{{ Leicester_Square }}</strong></li>
+		<li id="pic038" class="station rot45"><strong class="right below wide">{{ Covent_Garden }}</strong></li>
+		<li id="pic039" class="station"><strong class="left two-lines">{{ Russell_Square }}</strong></li>
+		<li id="pic040" class="roundel disabled"><strong class="above">{{ Kings_Cross_St_Pancras }}</strong></li>
+		<li id="pic041" class="roundel disabled"><strong class="above left wide">{{ Caledonian_Road }}</strong></li>
+		<li id="pic042" class="station rot45"><strong class="left">{{ Holloway_Road }}</strong></li>
+		<li id="pic043" class="station rot45"><strong class="left">{{ Arsenal }}</strong></li>
+		<li id="pic044" class="roundel connection"><strong class="below right">{{ Finsbury_Park }}</strong></li>
+		<li id="pic045" class="station"><strong class="left">{{ Manor_House }}</strong></li>
+		<li id="pic046" class="station"><strong class="left">{{ Turnpike_Lane }}</strong></li>
+		<li id="pic047" class="station"><strong class="left">{{ Wood_Green }}</strong></li>
+		<li id="pic048" class="station"><strong class="left">{{ Bounds_Green }}</strong></li>
+		<li id="pic049" class="station"><strong class="left">{{ Arnos_Grove }}</strong></li>
+		<li id="pic050" class="station"><strong class="left">{{ Southgate }}</strong></li>
+		<li id="pic051" class="roundel disabled"><strong class="right">{{ Oakwood }}</strong></li>
+		<li id="pic052" class="station"><strong class="right">{{ Cockfosters }}</strong></li>
+		<li id="pic053" class="route"></li>
+		<li id="pic054" class="route rot45"></li>
+		<li id="pic055" class="route bend45deg"></li>
+		<!--<li id="pic055" class="route bend45deg"></li>-->
+		<li id="pic056" class="route"></li>
+		<li id="pic057" class="route bend45deg rot45"></li>
+		<li id="pic058" class="route bend45deg rot90 flipped"></li>
+		<li id="pic059" class="route bend45deg rot45 flipped"></li>
+		<li id="pic060" class="route rot45"></li>
+		<li id="pic061" class="route"></li>
+		<li id="pic062" class="route bend45deg flipped"></li>
+		<li id="pic063" class="route rot315"></li>
+		<li id="pic064" class="route bend45deg rot180 flipped"></li>
+		<li id="pic065" class="route"></li>
+		<li id="pic066" class="route bend45deg flipped"></li>
+		<li id="pic067" class="route rot315"></li>
+		<li id="pic068" class="route bend45deg rot90"></li>
+		<li id="pic069" class="route"></li>
+		<li id="pic070" class="route bend45deg rot270"></li>
+		<li id="pic071" class="route rot315"></li>
+		<li id="pic072" class="route bend45deg rot90"></li>
+		<li id="pic073" class="route"></li>
+		<li id="pic074" class="route rot315"></li>
+		<li id="pic075" class="route bend45deg rot180 flipped"></li>
+		<li id="pic076" class="route"></li>
+		<li id="pic077" class="route"></li>
+		<li id="pic078" class="route chevron"></li>
+		<li id="pic079" class="route chevron"></li>
+		<li id="pic080" class="route chevron"></li>
+		<li id="pic081" class="route bend45deg rot270"></li>
+	</ul>
+
+	<ul id="metropolitan" class="line">
+		<li id="met001" class="roundel connection"><strong class="below">{{ Amersham }}</strong></li>
+		<li id="met002" class="roundel disabled"><strong class="above left">{{ Chesham }}</strong></li>
+		<li id="met003" class="roundel disabled navy"><strong class="above">{{ Chalfont__Latimer }}</strong></li>
+		<li id="met004" class="roundel disabled navy"><strong class="below left">{{ Chorleywood }}</strong></li>
+		<li id="met005" class="station vertical rot45"><strong class="left">{{ Rickmansworth }}</strong></li>
+		<li id="met006" class="station"><strong class="right">{{ Watford }}</strong></li>
+		<li id="met007" class="station"><strong class="right">{{ Croxley }}</strong></li>
+		<li id="met008" class="station rot315"><strong class="right">{{ Moor_Park }}</strong></li>
+		<li id="met009" class="station rot315"><strong class="right">{{ Northwood }}</strong></li>
+		<li id="met010" class="station rot315"><strong class="right">{{ Northwood_Hills }}</strong></li>
+		<li id="met011" class="roundel disabled navy"><strong class="above right">{{ Pinner }}</strong></li>
+		<li id="met012" class="station rot315"><strong class="right">{{ North_Harrow }}</strong></li>
+		<li id="met013" class="station vertical"><strong class="below">{{ West_Harrow }}</strong></li>
+		<li id="met014" class="roundel disabled"><strong class="above">{{ Harrow_on_the_Hill }}</strong></li>
+		<li id="met015" class="station vertical"><strong class="above">{{ Northwick_Park }}</strong></li>
+		<li id="met016" class="station vertical"><strong class="above">{{ Preston_Road }}</strong></li>
+		<li id="met017" class="roundel disabled navy"><strong class="left below">{{ Wembley_Park }}</strong></li>
+		<li id="met018" class="roundel connection"><strong class="right above wide">{{ Finchley_Road }}</strong></li>
+		<li id="met019" class="roundel connection"><strong class="above">{{ Baker_Street }}</strong></li>
+		<li id="met020" class="station vertical"><strong class="below">{{ Euston_Square }}</strong></li>
+		<li id="met021" class="station vertical rot45"><strong class="below left">{{ Barbican }}</strong></li>
+		<li id="met022" class="station vertical"><strong class="left">{{ Aldgate }}</strong></li>
+		<li id="met023" class="route"></li>
+		<li id="met024" class="route bend45deg"></li>
+		<li id="met025" class="route rot45"></li>
+		<li id="met026" class="route"></li>
+		<li id="met027" class="route rot45"></li>
+		<li id="met028" class="route bend45deg rot180"></li>
+		<li id="met029" class="route bend45deg rot90 flipped"></li>
+		<li id="met030" class="route bend45deg rot180"></li>
+		<li id="met031" class="route"></li>
+		<li id="met032" class="route bend45deg"></li>
+		<li id="met033" class="route rot45"></li>
+		<li id="met034" class="route bend45deg rot180"></li>
+		<li id="met035" class="route"></li>
+		<li id="met036" class="route bend45deg"></li>
+		<li id="met037" class="route rot45"></li>
+		<li id="met038" class="route bend45deg rot180"></li>
+		<li id="met039" class="route"></li>
+		<li id="met040" class="route bend45deg"></li>
+		<li id="met041" class="route rot45"></li>
+		<li id="met042" class="route bend45deg rot180"></li>
+		<li id="met043" class="route"></li>
+		<li id="met044" class="route bend90deg"></li>
+		<li id="met045" class="route"></li>
+		<li id="met046" class="station vertical"></li>
+		<li id="met047" class="station rot315"></li>
+		<li id="met048" class="station rot315"></li>
+		<li id="met049" class="station vertical"></li>
+	</ul>
+
+	<ul id="district" class="line">
+		<li id="dis001" class="station vertical"><strong class="below">{{ Chiswick_Park }}</strong></li>
+		<li id="dis002" class="station vertical"><strong class="below">{{ Turnham_Green }}</strong></li>
+		<li id="dis003" class="station vertical"><strong class="below">{{ Stamford_Brook }}</strong></li>
+		<li id="dis004" class="roundel disabled"></li>
+		<li id="dis005" class="station vertical"><strong class="below">{{ West_Kensington }}</strong></li>
+		<li id="dis006" class="roundel connection"></li>
+		<li id="dis007" class="roundel disabled"><strong class="left">{{ Fulham_Broadway }}</strong></li>
+		<li id="dis008" class="station"><strong class="left">{{ Parsons_Green }}</strong></li>
+		<li id="dis009" class="station"><strong class="left">{{ Putney_Bridge }}</strong></li>
+		<li id="dis010" class="station"><strong class="left">{{ East_Putney }}</strong></li>
+		<li id="dis011" class="roundel disabled"><strong class="left">{{ Southfields }}</strong></li>
+		<li id="dis012" class="station"><strong class="left">{{ Wimbledon_Park }}</strong></li>
+		<li id="dis013" class="roundel disabled"><strong class="left">{{ Wimbledon }}</strong></li>
+		<li id="dis014" class="roundel connection"><strong class="below">{{ Edgware_Road }}</strong></li>
+		<li id="dis015" class="roundel connection"></li>
+		<li id="dis016" class="station"><strong class="right">{{ Bayswater }}</strong></li>
+		<li id="dis017" class="station"><strong class="right">{{ High_Street_Kensington }}</strong></li>
+		<li id="dis018" class="roundel disabled"></li>
+		<li id="dis019" class="station vertical"></li>
+		<li id="dis020" class="roundel connection"></li>
+		<li id="dis021" class="station vertical"><strong class="below">{{ Sloane_Square }}</strong></li>
+		<li id="dis022" class="roundel connection"><strong class="above left">{{ Victoria }}</strong></li>
+		<li id="dis023" class="station vertical"><strong class="above">{{ StJamess_Park }}</strong></li>
+		<li id="dis024" class="roundel disabled"><strong class="below">{{ Westminster }}</strong></li>
+		<li id="dis025" class="roundel connection"></li>
+		<li id="dis026" class="station vertical"><strong class="above">{{ Temple }}</strong></li>
+		<li id="dis027" class="roundel disabled"><strong class="above left">{{ Blackfriars }}</strong></li>
+		<li id="dis028" class="station rot45"><strong class="left">{{ Mansion_House }}</strong></li>
+		<li id="dis029" class="roundel connection"><strong class="left above wide">{{ Cannon_Street }}</strong></li>
+		<li id="dis030" class="roundel connection"><strong class="left below">{{ Tower_Hill }}<small class="rail"><br/>Fenchurch Street</small></strong></li>
+		<li id="dis031" class="roundel connection"><strong class="left above">{{ Aldgate_East }}</strong></li>
+		<li id="dis032" class="roundel connection"><strong class="right below">{{ Whitechapel }}</strong></li>
+		<li id="dis033" class="station rot45"><strong class="right wide below">{{ Stepney_Green }}</strong></li>
+		<li id="dis034" class="roundel connection"></li>
+		<li id="dis035" class="roundel connection"><strong class="above">{{ Bow_Road }}</strong></li>
+		<li id="dis036" class="station vertical"><strong class="below">{{ Bromley_by_Bow }}</strong></li>
+		<li id="dis037" class="roundel disabled"></li>
+		<li id="dis038" class="station rot45"><strong class="right wide below">{{ Plaistow }}</strong></li>
+		<li id="dis039" class="station rot45"><strong class="right wide below">{{ Upton_Park }}</strong></li>
+		<li id="dis040" class="roundel disabled"><strong class="right below">{{ East_Ham }}</strong></li>
+		<li id="dis041" class="roundel disabled"><strong class="right below">{{ Barking }}</strong></li>
+		<li id="dis042" class="roundel disabled"><strong class="right below">{{ Upney }}</strong></li>
+		<li id="dis043" class="station rot45"><strong class="right wide below">{{ Becontree }}</strong></li>
+		<li id="dis044" class="roundel disabled"><strong class="right below">{{ Dagenham_Heathway }}</strong></li>
+		<li id="dis045" class="station rot45"><strong class="left above">{{ Dagenham_East }}</strong></li>
+		<li id="dis046" class="roundel disabled"><strong class="right below">{{ Elm_Park }}</strong></li>
+		<li id="dis047" class="station rot45"><strong class="left wide above">{{ Hornchurch }}</strong></li>
+		<li id="dis048" class="station rot45"><strong class="left wide abouve">{{ Upminster_Bridge }}</strong></li>
+		<li id="dis049" class="roundel disabled"><strong class="left above">{{ Upminster }}</strong></li>
+		<li id="dis050" class="station vertical"><strong class="below">{{ Ravenscourt_Park }}</strong></li>
+		<li id="dis051" class="station vertical"></li>
+		<li id="dis052" class="roundel connection"><strong class="right">{{ Gunnersbury }}</strong></li>
+		<li id="dis053" class="roundel disabled"><strong class="right">{{ Kew_Gardens }}</strong></li>
+		<li id="dis054" class="roundel disabled"><strong class="right">{{ Richmond }}</strong></li>
+		<li id="dis055" class="roundel connection"><strong class="below">{{ Monument }}</strong></li>
+		<li id="dis056" class="route"></li>
+		<li id="dis057" class="route bend90deg"></li>
+		<li id="dis058" class="route"></li>
+		<li id="dis059" class="route bend45deg rot90 flipped"></li>
+		<li id="dis060" class="route bend45deg rot180"></li>
+		<li id="dis061" class="route rot45"></li>
+		<li id="dis062" class="route"></li>
+		<li id="dis063" class="route bend45deg flipped"></li>
+		<li id="dis064" class="station vertical"></li>
+		<li id="dis065" class="route diagonal rot315"></li>
+		<li id="dis066" class="route bend45deg rot180 flipped"></li>
+		<li id="dis067" class="route"></li>
+		<li id="dis068" class="route bend45deg flipped"></li>
+		<li id="dis069" class="route diagonal rot315"></li>
+		<li id="dis070" class="route bend45deg rot180 flipped"></li>
+		<li id="dis071" class="route"></li>
+		<li id="dis072" class="route bend45deg flipped"></li>
+		<li id="dis073" class="route diagonal rot315"></li>
+		<li id="dis074" class="route bend90deg rot270"></li>
+		<li id="dis075" class="route"></li>
+		<li id="dis076" class="route bend90deg rot270"></li>
+		<li id="dis077" class="route"></li>
+		<li id="dis078" class="route bend90deg rot90"></li>
+		<li id="dis079" class="route"></li>
+		<li id="dis080" class="route bend90deg rot270"></li>
+		<li id="dis081" class="route bend90deg rot270"></li>
+		<li id="dis082" class="route"></li>
+		<li id="dis083" class="roundel disabled"><strong class="left">{{ Kensington_Olympia }}</strong></li>
+		<li id="dis084" class="route"></li>
+		<li id="dis085" class="route bend90deg rot180"></li>
+		<li id="dis087" class="route"></li>
+		<li id="dis088" class="route"></li>
+		<li id="dis089" class="route"></li>
+		<li id="dis090" class="route"></li>
+		<li id="dis091" class="route"></li>
+		<li id="dis092" class="route"></li>
+		<li id="dis093" class="route"></li>
+		<li id="dis094" class="route"></li>
+		<li id="dis095" class="route"></li>
+		<li id="dis096" class="route"></li>
+		<li id="dis097" class="route"></li>
+		<li id="dis098" class="station vertical"></li>
+		<li id="dis099" class="station rot45"></li>
+	</ul>
+
+	<ul id="circle" class="line">
+		<li id="cir001" class="station"></li>
+		<li id="cir002" class="station"></li>
+		<li id="cir003" class="station vertical"></li>
+		<li id="cir004" class="station vertical"></li>
+		<li id="cir005" class="station vertical"></li>
+		<li id="cir006" class="station rot45"></li>
+		<li id="cir007" class="station"></li>
+		<li id="cir008" class="roundel connection"><strong class="above">{{ Liverpool_Street }}</strong></li>
+		<li id="cir009" class="roundel connection"><strong class="below right">{{ Moorgate }}</strong></li>
+		<li id="cir010" class="station rot315"></li> <!-- Barbican -->
+		<li id="cir011" class="roundel connection"><strong class="left">{{ Farringdon }}</strong></li>
+		<li id="cir012" class="roundel disabled"></li>
+		<li id="cir013" class="station vertical"></li>
+		<li id="cir014" class="station vertical"></li>
+		<li id="cir015" class="roundel connection"></li>
+		<li id="cir016" class="roundel connection"></li>
+		<li id="cir017" class="station rot45"></li>
+		<li id="cir018" class="station rot45"></li>
+		<li id="cir019" class="station rot45"><strong class="right below wide">{{ Ladbroke_Grove }}</strong></li>
+		<li id="cir020" class="station rot45"><strong class="right below wide">{{ Latimer_Road }}</strong></li>
+		<li id="cir021" class="roundel disabled"><strong class="left wide">{{ Wood_Lane }}</strong></li>
+		<li id="cir022" class="station"></li>
+		<li id="cir023" class="station"></li>
+		<li id="cir024" class="roundel disabled"></li>
+		<li id="cir025" class="route"></li>
+		<li id="cir026" class="route bend90deg rot270"></li>
+		<li id="cir027" class="route"></li>
+		<li id="cir028" class="route bend90deg rot180"></li>
+		<li id="cir029" class="route"></li>
+		<li id="cir030" class="route bend45deg flipped"></li>
+		<li id="cir031" class="route rot315"></li>
+		<li id="cir032" class="route bend45deg rot180 flipped"></li>
+		<li id="cir033" class="route"></li>
+		<li id="cir034" class="route bend90deg rot90"></li>
+		<li id="cir035" class="route"></li>
+		<li id="cir036" class="route bend90deg"></li>
+		<li id="cir037" class="route"></li>
+		<li id="cir038" class="route bend45deg rot180"></li>
+		<li id="cir039" class="route rot45"></li>
+		<li id="cir040" class="route bend45deg"></li>
+		<li id="cir041" class="route"></li>
+		<li id="cir042" class="route bend45deg rot180 flipped"></li>
+		<li id="cir043" class="route rot315"></li>
+		<!--<li id="cir043" class="route rot315"></li>-->
+		<li id="cir044" class="route bend45deg rot270"></li>
+		<li id="cir045" class="route"></li>
+		<li id="cir046" class="station vertical"></li>
+		<li id="cir047" class="station vertical"></li>
+	</ul>
+
+	<ul id="hammersmith-and-city" class="line">
+		<li id="ham001" class="station"><strong class="left wide">{{ Goldhawk_Road }}</strong></li>
+		<li id="ham002" class="station"><strong class="left wide">{{ Shepherds_Bush_Market }}</strong></li>
+		<li id="ham003" class="station rot45"><strong class="left wide">{{ Westbourne_Park }}</strong></li>
+		<li id="ham004" class="station rot45"><strong class="left">{{ Royal_Oak }}</strong></li>
+		<li id="ham005" class="station vertical"><strong class="above">{{ Great_Portland_Street }}</strong></li>
+		<li id="ham006" class="route"></li>
+		<li id="ham007" class="route bend45deg rot270"></li>
+		<li id="ham008" class="route rot315"></li>
+		<li id="ham009" class="route bend45deg rot180 flipped"></li>
+		<li id="ham010" class="route"></li>
+		<li id="ham011" class="route bend45deg"></li>
+		<li id="ham012" class="route rot45"></li>
+		<li id="ham013" class="route bend45deg rot180"></li>
+		<li id="ham014" class="route"></li>
+		<li id="ham015" class="route bend90deg"></li>
+		<li id="ham016" class="route"></li>
+		<li id="ham017" class="route bend45deg rot90 flipped"></li>
+		<li id="ham018" class="route rot45"></li>
+		<li id="ham019" class="route bend90deg rot90"></li>
+		<li id="ham020" class="route diagonal rot315"></li>
+		<li id="ham021" class="route bend45deg rot180 flipped"></li>
+		<li id="ham022" class="route"></li>
+		<li id="ham023" class="route bend45deg flipped"></li>
+		<li id="ham024" class="route diagonal rot315"></li>
+		<li id="ham025" class="station rot45"></li>
+		<li id="ham026" class="station rot45"></li>
+		<li id="ham027" class="station vertical"></li>
+		<li id="ham028" class="station rot315"></li>
+	</ul>
+
+	<ul id="bakerloo" class="line">
+		<li id="bak001" class="roundel disabled"><strong class="left">{{ Harrow__Wealdstone }}</strong></li>
+		<li id="bak002" class="station"></li>
+		<li id="bak003" class="station"><strong class="left wide">{{ South_Kenton }}</strong></li>
+		<li id="bak004" class="station"><strong class="left wide">{{ North_Wembley }}</strong></li>
+		<li id="bak005" class="roundel disabled"><strong class="left wide">{{ Wembley_Central }}</strong></li>
+		<li id="bak006" class="station"><strong class="left wide">{{ Stonebridge_Park }}</strong></li>
+		<li id="bak007" class="station"><strong class="left wide">{{ Harlesden }}</strong></li>
+		<li id="bak008" class="roundel disabled"><strong class="left wide">{{ Willesden_Junction }}</strong></li>
+		<li id="bak009" class="station"></li>
+		<li id="bak010" class="roundel connection"><strong class="right wide">{{ Queens_Park }}</strong></li>
+		<li id="bak011" class="station rot315"><strong class="left wide">{{ Kilburn_Park }}</strong></li>
+		<li id="bak012" class="station rot315"><strong class="left wide">{{ Maida_Vale }}</strong></li>
+		<li id="bak013" class="station rot315"><strong class="left wide">{{ Warwick_Avenue }}</strong></li>
+		<li id="bak014" class="roundel connection"><strong class="above">{{ Paddington }}</strong></li>
+		<li id="bak015" class="station vertical"><strong class="above">{{ Edgware_Road }}</strong></li>
+		<li id="bak016" class="roundel connection"><strong class="above">{{ Marylebone }}</strong></li>
+		<li id="bak017" class="roundel connection"></li>
+		<li id="bak018" class="station rot315"><strong class="right">{{ Regents_Park }}</strong></li>
+		<li id="bak019" class="roundel connection"><strong class="left">{{ Charing_Cross }}</strong></li>
+		<li id="bak020" class="roundel connection"><strong class="right">{{ Embankment }}</strong></li>
+		<li id="bak021" class="roundel connection"></li>
+		<li id="bak022" class="station"><strong class="right wide">{{ Lambeth_North }}</strong></li>
+		<li id="bak023" class="roundel connection"><strong class="right wide">{{ Elephant__Castle }}</strong></li>
+		<li id="bak024" class="route"></li>
+		<li id="bak025" class="route bend45deg rot90 flipped"></li>
+		<li id="bak026" class="route rot45"></li>
+		<li id="bak027" class="route bend45deg rot180"></li>
+		<li id="bak028" class="route"></li>
+		<li id="bak029" class="route bend45deg"></li>
+		<li id="bak030" class="route rot45"></li>
+		<li id="bak031" class="route bend45deg rot45"></li>
+		<li id="bak032" class="route"></li>
+		<li id="bak033" class="route bend45deg rot90 flipped"></li>
+		<li id="bak034" class="route rot45"></li>
+		<li id="bak035" class="route bend45deg rot45"></li>
+		<li id="bak036" class="route"></li>
+		<li id="bak037" class="route bend45deg rot90 flipped"></li>
+		<li id="bak038" class="route rot45"></li>
+	</ul>
+
+	<ul id="victoria" class="line">
+		<li id="vic001" class="roundel connection"><strong class="below">{{ Walthamstow_Central }}</strong></li>
+		<li id="vic002" class="roundel connection"><strong class="above right">{{ Blackhorse_Road }}</strong></li>
+		<li id="vic003" class="roundel disabled"><strong class="below">{{ Tottenham_Hale }}</strong></li>
+		<li id="vic004" class="roundel connection"><strong class="above">{{ Seven_Sisters }}</strong></li>
+		<li id="vic005" class="roundel connection"></li>
+		<li id="vic006" class="roundel connection"><strong class="above right">{{ Highbury__Islington }}</strong></li>
+		<li id="vic007" class="roundel disabled"></li>
+		<li id="vic008" class="roundel connection"></li>
+		<li id="vic009" class="roundel connection"><strong class="left wide">{{ Warren_Street }}</strong></li>
+		<li id="vic010" class="station"><strong class="left">{{ Pimlico }}</strong></li>
+		<li id="vic011" class="roundel connection"><strong class="left below">{{ Vauxhall }}</strong></li>
+		<li id="vic012" class="roundel connection"><strong class="right">{{ Stockwell }}</strong></li>
+		<li id="vic013" class="roundel disabled navy"><strong class="right below">{{ Brixton }}</strong></li>
+		<li id="vic014" class="route"></li>
+		<li id="vic015" class="route bend45deg rot180 flipped"></li>
+		<li id="vic016" class="route rot315"></li>
+		<li id="vic017" class="route bend45deg rot270"></li>
+		<li id="vic018" class="route"></li>
+		<li id="vic019" class="route bend45deg rot90"></li>
+		<li id="vic020" class="route rot315"></li>
+		<li id="vic021" class="route bend45deg flipped"></li>
+		<li id="vic022" class="route"></li>
+		<li id="vic023" class="route bend45deg rot180 flipped"></li>
+		<li id="vic024" class="route rot315"></li>
+		<li id="vic025" class="route bend45deg rot270"></li>
+		<li id="vic026" class="route"></li>
+		<li id="vic027" class="route bend45deg rot90 flipped"></li>
+		<li id="vic028" class="route rot45"></li>
+	</ul>
+
+	<ul id="waterloo-and-city" class="line">
+		<li id="wat001" class="route"></li>
+		<li id="wat002" class="route bend45deg flipped"></li>
+		<li id="wat003" class="route rot315"></li>
+		<li id="wat004" class="route bend45deg rot90"></li>
+		<li id="wat005" class="route"></li>
+	</ul>
+
+	<ul id="northern" class="line">
+		<li id="nor001" class="roundel disabled"><strong class="right wide">{{ High_Barnet }}</strong></li>
+		<li id="nor002" class="station"><strong class="right wide">{{ Totteridge__Whetstone }}</strong></li>
+		<li id="nor003" class="roundel disabled"><strong class="right wide">{{ Woodside_Park }}</strong></li>
+		<li id="nor004" class="roundel disabled"><strong class="right wide">{{ West_Finchley }}</strong></li>
+		<li id="nor005" class="station rot315"><strong class="left below wide">{{ Mill_Hill_East }}</strong></li>
+		<li id="nor006" class="roundel disabled"><strong class="right wide">{{ Finchley_Central }}</strong></li>
+		<li id="nor007" class="station"><strong class="right wide">{{ East_Finchley }}</strong></li>
+		<li id="nor007b" class="station"><strong class="right wide">{{ Highgate }}</strong></li>
+		<li id="nor008" class="station"><strong class="right wide">{{ Archway }}</strong></li>
+		<li id="nor009" class="station"><strong class="right wide">{{ Tufnell_Park }}</strong></li>
+		<li id="nor010" class="roundel connection"><strong class="right wide">{{ Kentish_Town }}</strong></li>
+		<li id="nor011" class="roundel disabled"><strong class="below left">{{ Edgware }}</strong></li>
+		<li id="nor012" class="station rot315"><strong class="left wide">{{ Burnt_Oak }}</strong></li>
+		<li id="nor013" class="station rot315"><strong class="left wide">{{ Colindale }}</strong></li>
+		<li id="nor014" class="roundel disabled"><strong class="below left wide">{{ Hendon_Central }}</strong></li>
+		<li id="nor015" class="station rot315"><strong class="left wide">{{ Brent_Cross }}</strong></li>
+		<li id="nor016" class="roundel disabled"><strong class="below left wide">{{ Golders_Green }}</strong></li>
+		<li id="nor017" class="station rot315"><strong class="left wide">{{ Hampstead }}</strong></li>
+		<li id="nor018" class="station rot315"><strong class="left wide">{{ Belsize_Park }}</strong></li>
+		<li id="nor019" class="station rot315"><strong class="left wide">{{ Chalk_Farm }}</strong></li>
+		<li id="nor020" class="station"><strong class="left wide">{{ Camden_Town }}</strong></li>
+		<li id="nor021" class="station"><strong class="left">{{ Mornington_Crescent }}</strong></li>
+		<li id="nor022" class="roundel disabled"></li>
+		<li id="nor023" class="station"><strong class="left">{{ Goodge_Street }}</strong></li>
+		<li id="nor024" class="roundel connection"></li>
+		<li id="nor025" class="station vertical"><strong class="below">{{ Angel }}</strong></li>
+		<li id="nor026" class="roundel connection"><strong class="right">{{ Old_Street }}</strong></li>
+		<li id="nor027" class="roundel connection"></li>
+		<li id="nor028" class="roundel disabled"><strong class="right below">{{ London_Bridge }}</strong></li>
+		<li id="nor029" class="station rot45"><strong class="right below">{{ Borough }}</strong></li>
+		<li id="nor030" class="station rot45"><strong class="right below">{{ Kennington }}</strong></li>
+		<li id="nor031" class="station rot45"><strong class="left">{{ Oval }}</strong></li>
+		<li id="nor032" class="roundel connection"><strong class="left">{{ Clapham_North }}</strong></li>
+		<li id="nor033" class="station rot45"><strong class="left">{{ Clapham_Common }}</strong></li>
+		<li id="nor034" class="station rot45"><strong class="left">{{ Clapham_South }}</strong></li>
+		<li id="nor035" class="roundel connection"><strong class="left above">{{ Balham }}</strong></li>
+		<li id="nor036" class="station rot45"><strong class="right below wide">{{ Tooting_Bec }}</strong></li>
+		<li id="nor037" class="station rot45"><strong class="below right wide">{{ Tooting_Broadway }}</strong></li>
+		<li id="nor038" class="station rot45"><strong class="right below wide">{{ Colliers_Wood }}</strong></li>
+		<li id="nor039" class="station rot45"><strong class="right below wide">{{ South_Wimbledon }}</strong></li>
+		<li id="nor040" class="roundel disabled"><strong class="right wide">{{ Morden }}</strong></li>
+		<li id="nor041" class="route"></li>
+		<li id="nor042" class="route rot315"></li>
+		<li id="nor043" class="route bend45deg rot90"></li>
+		<li id="nor044" class="route bend45deg rot45"></li>
+		<li id="nor045" class="route rot315"></li>
+		<li id="nor046" class="route rot315"></li>
+		<li id="nor047" class="route bend45deg rot45"></li>
+		<li id="nor048" class="route bend45deg rot270"></li>
+		<li id="nor049" class="route"></li>
+		<li id="nor050" class="route bend45deg rot90 flipped"></li>
+		<li id="nor051" class="route bend45deg rot90"></li>
+		<li id="nor052" class="route bend45deg rot270"></li>
+		<li id="nor053" class="route bend45deg rot270 flipped"></li>
+		<li id="nor054" class="route"></li>
+		<li id="nor055" class="route"></li>
+		<li id="nor056" class="route rot315"></li>
+		<li id="nor057" class="route"></li>
+		<li id="nor058" class="route bend90deg rot180"></li>
+		<li id="nor059" class="route"></li>
+		<li id="nor060" class="route bend90deg"></li>
+		<li id="nor061" class="route"></li>
+		<li id="nor062" class="route bend45deg rot90"></li>
+		<li id="nor063" class="route rot315"></li>
+		<li id="nor064" class="route bend45deg rot90"></li>
+		<li id="nor065" class="station rot45"></li>
+	</ul>
+
+	<ul id="jubilee" class="line">
+		<li id="jub001" class="roundel disabled"><strong class="right wide">{{ Stanmore }}</strong></li>
+		<li id="jub002" class="station"><strong class="right wide">{{ Canons_Park }}</strong></li>
+		<li id="jub003" class="station"><strong class="right wide">{{ Queensbury }}</strong></li>
+		<li id="jub004" class="roundel disabled navy"><strong class="right wide">{{ Kingsbury }}</strong></li>
+		<li id="jub005" class="roundel disabled"></li>
+		<li id="jub006" class="station rot315"><strong class="right">{{ Neasden }}</strong></li>
+		<li id="jub007" class="station rot315"><strong class="right wide">{{ Dollis_Hill }}</strong></li>
+		<li id="jub008" class="station rot315"><strong class="right wide">{{ Willesden_Green }}</strong></li>
+		<li id="jub009" class="roundel disabled"><strong class="right above wide">{{ Kilburn }}</strong></li>
+		<li id="jub010" class="roundel connection"><strong class="right wide above">{{ West_Hampstead }}</strong></li>
+		<li id="jub011" class="roundel connection"></li>
+		<li id="jub012" class="station rot315"><strong class="right wide">{{ Swiss_Cottage }}</strong></li>
+		<li id="jub013" class="station rot315"><strong class="right wide">{{ St_Johns_Wood }}</strong></li>
+		<li id="jub014" class="roundel disabled navy"></li>
+		<li id="jub015" class="roundel disabled navy"><strong class="left wide">{{ Waterloo }}</strong></li>
+		<li id="jub016" class="roundel disabled navy"><strong class="below">{{ Southwark }}</strong></li>
+		<li id="jub017" class="roundel disabled"><strong class="below">{{ Bermondsey }}</strong></li>
+		<li id="jub018" class="roundel disabled"><strong class="below">{{ Canada_Water }}</strong></li>
+		<li id="jub019" class="roundel disabled navy"><strong class="above left wide">{{ Canary_Wharf }}</strong>
+		</li>
+		<li id="jub020" class="roundel disabled navy"><strong class="below">{{ North_Greenwich }}<small>for The O<em>2</em></small></strong></li>
+		<li id="jub021" class="roundel disabled navy"></li>
+		<li id="jub022" class="roundel disabled navy"></li>
+		<li id="jub023" class="roundel disabled navy"></li>
+
+		<li id="jub024" class="route"></li>
+		<li id="jub025" class="route bend45deg rot90 flipped"></li>
+		<li id="jub026" class="route rot45"></li>
+		<li id="jub027" class="route bend45deg rot45"></li>
+		<li id="jub028" class="route"></li>
+		<li id="jub029" class="route bend45deg rot90 flipped"></li>
+		<li id="jub030" class="route rot45"></li>
+		<li id="jub031" class="route bend45deg rot45"></li>
+		<li id="jub032" class="route"></li>
+		<li id="jub033" class="route bend90deg rot180 flipped"></li>
+		<li id="jub034" class="route"></li>
+		<li id="jub035" class="route bend45deg flipped"></li>
+		<li id="jub036" class="route rot315"></li>
+		<li id="jub037" class="route bend45deg rot180 flipped"></li>
+		<li id="jub038" class="route"></li>
+		<li id="jub039" class="route bend45deg flipped"></li>
+		<li id="jub040" class="route rot315"></li>
+		<li id="jub041" class="route bend45deg rot90"></li>
+		<li id="jub042" class="route"></li>
+	</ul>
+
+	<ul id="overground" class="line">
+		<li id="ove001" class="roundel disabled"><strong class="left wide">{{ Watford_Junction }}</strong></li>
+		<li id="ove002" class="station"><strong class="left wide">{{ Watford_High_Street }}</strong></li>
+		<li id="ove003" class="roundel connection"><strong class="left wide">{{ Bushey }}</strong></li>
+		<li id="ove004" class="roundel disabled"><strong class="left wide">{{ Carpenders_Park }}</strong></li>
+		<li id="ove005" class="station"><strong class="left wide">{{ Hatch_End }}</strong></li>
+		<li id="ove006" class="station"><strong class="left wide">{{ Headstone_Lane }}</strong></li>
+		<li id="ove007" class="station"><strong class="right wide">{{ Kenton }}</strong></li>
+		<li id="ove008" class="station"><strong class="right wide">{{ Kensal_Green }}</strong></li>
+		<li id="ove009" class="station vertical"><strong class="above">{{ Kilburn_High_Road }}</strong></li>
+		<li id="ove010" class="station vertical"><strong class="above">{{ South_Hampstead }}</strong></li>
+		<li id="ove011" class="roundel disabled"><strong class="left">{{ Euston }}</strong></li>
+		<li id="ove012" class="roundel disabled"><strong class="left">{{ Acton_Central }}</strong></li>
+		<li id="ove013" class="roundel disabled"><strong class="left">{{ South_Acton }}</strong></li>
+		<li id="ove014" class="roundel disabled"></li>
+		<li id="ove015" class="roundel disabled"></li>
+		<li id="ove016" class="roundel disabled"><strong class="left">{{ West_Brompton }}</strong></li>
+		<li id="ove017" class="roundel disabled"><strong class="right above">{{ Imperial_Wharf }}</strong></li>
+		<li id="ove018" class="roundel disabled"><strong class="left below">{{ Clapham_Junction }}</strong></li>
+		<li id="ove019" class="roundel disabled"></li>
+		<li id="ove020" class="station vertical"><strong class="below">{{ Wandsworth_Road }}</strong></li>
+		<li id="ove021" class="roundel connection"><strong class="left wide">{{ Clapham_High_Street }}</strong></li>
+		<li id="ove022" class="roundel connection"><strong class="above wide">{{ Denmark_Hill }}</strong></li>
+		<li id="ove023" class="roundel connection"><strong class="left above wide">{{ Peckham_Rye }}</strong></li>
+		<li id="ove024" class="roundel connection"><strong class="left above wide">{{ Queens_Road_Peckham }}</strong></li>
+		<li id="ove025" class="roundel connection"><strong class="right">{{ New_Cross_Gate }}</strong></li>
+		<li id="ove026" class="station"><strong class="right wide">{{ Brockley }}</strong></li>
+		<li id="ove027" class="station"><strong class="right wide">{{ Honor_Oak_Park }}</strong></li>
+		<li id="ove028" class="roundel disabled"><strong class="right">{{ Forest_Hill }}</strong></li>
+		<li id="ove029" class="roundel disabled"><strong class="right">{{ Sydenham }}</strong></li>
+		<li id="ove030" class="station"><strong class="right wide">{{ Penge_West }}</strong></li>
+		<li id="ove031" class="roundel disabled"><strong class="right">{{ Anerley }}</strong></li>
+		<li id="ove032" class="roundel connection"><strong class="right">{{ Norwood_Junction }}</strong></li>
+		<li id="ove033" class="roundel disabled"><strong class="right">{{ West_Croydon }}</strong></li>
+		<li id="ove034" class="roundel connection"><strong class="left">{{ Crystal_Palace }}</strong></li>
+		<li id="ove035" class="roundel disabled"><strong class="right">{{ New_Cross }}</strong></li>
+		<li id="ove036" class="station"><strong class="left">{{ Surrey_Quays }}</strong></li>
+		<li id="ove037" class="roundel disabled"></li>
+		<li id="ove038" class="station"><strong class="left">{{ Rotherhithe }}</strong></li>
+		<li id="ove039" class="station"><strong class="right">{{ Wapping }}</strong></li>
+		<li id="ove040" class="roundel connection"><strong class="right above">{{ Shadwell }}</strong></li>
+		<li id="ove041" class="roundel disabled"><strong class="left">{{ Shoreditch_High_Street }}</strong></li>
+		<li id="ove042" class="roundel disabled"><strong class="left">{{ Hoxton }}</strong></li>
+		<li id="ove043" class="roundel disabled"><strong class="left">{{ Haggerston }}</strong></li>
+		<li id="ove044" class="roundel disabled"><strong class="left below wide">{{ Dalston_Junction }}</strong></li>
+		<li id="ove045" class="roundel disabled linked"><strong class="below">{{ Canonbury }}</strong></li>
+		<li id="ove046" class="roundel disabled"></li>
+		<li id="ove047" class="roundel disabled"><strong class="below">{{ Hackney_Wick }}</strong></li>
+		<li id="ove048" class="roundel disabled"><strong class="below">{{ Homerton }}</strong></li>
+		<li id="ove049" class="roundel disabled"><strong class="above right">{{ Hackney_Central }}</strong></li>
+		<li id="ove050" class="station vertical"><strong class="above">{{ Dalston_Kingsland }}</strong></li>
+		<li id="ove051" class="roundel disabled"></li>
+		<li id="ove052" class="roundel disabled"></li>
+		<li id="ove053" class="roundel disabled"><strong class="below">{{ Caledonian_Road__Barnsbury }}</strong></li>
+		<li id="ove054" class="roundel disabled"><strong class="left below">{{ Camden_Road }}</strong></li>
+		<li id="ove055" class="station rot315"><strong class="below left">{{ Kentish_Town_West }}</strong></li>
+		<li id="ove056" class="roundel disabled"></li>
+		<li id="ove057" class="station vertical"><strong class="above">{{ Hampstead_Heath }}</strong></li>
+		<li id="ove058" class="station rot45 wide"><strong class="left above">{{ Finchley_Road__Frognal }}</strong></li>
+		<li id="ove059" class="station vertical"><strong class="below">{{ Brondesbury }}</strong></li>
+		<li id="ove060" class="station vertical"><strong class="above">{{ Brondesbury_Park }}</strong></li>
+		<li id="ove061" class="station vertical"><strong class="above">{{ Kensal_Rise }}</strong></li>
+		<li id="ove062" class="roundel disabled linked"><strong class="above">{{ Gospel_Oak }}</strong></li>
+		<li id="ove063" class="roundel disabled"><strong class="below wide right">{{ Upper_Holloway }}</strong></li>
+		<li id="ove064" class="station rot45"><strong class="left above">{{ Crouch_Hill }}</strong></li>
+		<li id="ove065" class="roundel disabled"><strong class="above wide">{{ Harringay_Green_Lanes }}</strong></li>
+		<li id="ove066" class="station rot315"><strong class="right">{{ South_Tottenham }}</strong></li>
+		<li id="ove067" class="roundel disabled"><strong class="left wide below">{{ Walthamstow_Queens_Road }}</strong></li>
+		<li id="ove068" class="station vertical"><strong class="above wide">{{ Leyton_Midland_Road }}</strong></li>
+		<li id="ove069" class="station vertical"><strong class="above">{{ Leytonstone_High_Road }}</strong></li>
+		<li id="ove070" class="station rot315"><strong class="left below wide">{{ Wanstead_Park }}</strong></li>
+		<li id="ove071" class="station"><strong class="left wide">{{ Woodgrange_Park }}</strong></li>
+		<li id="ove072" class="route"></li>
+		<li id="ove073" class="route bend90deg rot180"></li>
+		<li id="ove074" class="route hor"></li>
+		<li id="ove075" class="route bend45deg"></li>
+		<li id="ove076" class="route rot45 hor"></li>
+		<li id="ove077" class="route"></li>
+		<li id="ove078" class="route bend45deg rot270"></li>
+		<li id="ove079" class="route rot315 hor"></li>
+		<li id="ove080" class="route bend45deg rot90"></li>
+		<li id="ove081" class="route"></li>
+		<li id="ove082" class="route rot315 hor"></li>
+		<li id="ove083" class="route bend45deg rot270"></li>
+		<li id="ove084" class="route bend45deg rot315"></li>
+		<li id="ove085" class="route hor"></li>
+		<li id="ove086" class="route bend45deg"></li>
+		<li id="ove087" class="route hor rot315"></li>
+		<li id="ove088" class="route bend45deg rot315"></li>
+		<li id="ove089" class="route hor"></li>
+		<li id="ove090" class="route bend45deg"></li>
+		<li id="ove091" class="route rot45 hor"></li>
+		<li id="ove092" class="route bend45deg rot180"></li>
+		<li id="ove093" class="route hor"></li>
+		<li id="ove094" class="route bend45deg"></li>
+		<li id="ove095" class="route rot45 hor"></li>
+		<li id="ove096" class="route bend45deg rot180"></li>
+		<li id="ove097" class="route hor"></li>
+		<li id="ove098" class="route hor"></li>
+		<li id="ove099" class="route bend45deg"></li>
+		<li id="ove100" class="route rot45 hor"></li>
+		<li id="ove101" class="route bend45deg rot45"></li>
+		<li id="ove102" class="route"></li>
+		<li id="ove103" class="route hor rot315"></li>
+		<li id="ove105" class="route"></li>
+		<li id="ove106" class="route bend45deg rot135"></li>
+		<li id="ove107" class="route hor rot315"></li>
+		<li id="ove108" class="route bend45deg rot180"></li>
+		<li id="ove109" class="route hor"></li>
+		<li id="ove110" class="route bend45deg"></li>
+		<li id="ove111" class="route rot45 hor"></li>
+		<li id="ove112" class="route hor"></li>
+		<li id="ove113" class="route rot45 hor"></li>
+		<li id="ove114" class="route bend45deg rot90"></li>
+		<li id="ove115" class="route"></li>
+		<li id="ove116" class="route rot45 hor"></li>
+		<li id="ove117" class="route bend45deg rot90"></li>
+		<li id="ove118" class="route bend45deg"></li>
+		<li id="ove119" class="route"></li>
+		<li id="ove120" class="route hor"></li>
+		<li id="ove121" class="route hor rot315"></li>
+		<li id="ove122" class="route bend45deg"></li>
+		<li id="ove123" class="route bend45deg rot315"></li>
+		<li id="ove124" class="route hor"></li>
+		<li id="ove125" class="route bend45deg"></li>
+		<li id="ove126" class="route hor rot45"></li>
+		<li id="ove127" class="route bend45deg rot180"></li>
+		<li id="ove128" class="route hor"></li>
+		<li id="ove129" class="route bend45deg"></li>
+		<li id="ove130" class="route hor rot45"></li>
+		<li id="ove131" class="route bend45deg rot45"></li>
+		<li id="ove132" class="route"></li>
+		<li id="ove133" class="spacer rot315"></li>
+		<li id="ove134" class="spacer"></li>
+		<li id="ove135" class="spacer"></li>
+		<li id="ove136" class="spacer rot45"></li>
+		<li id="ove137" class="spacer"></li>
+		<li id="ove138" class="station"></li>
+		<li id="ove139" class="station"></li>
+		<li id="ove140" class="station"></li>
+		<li id="ove141" class="station"></li>
+		<li id="ove142" class="station"></li>
+	</ul>
+
+	<ul id="dlr" class="line">
+		<li id="dlr001" class="roundel disabled"></li>
+		<li id="dlr002" class="roundel disabled"></li>
+		<li id="dlr003" class="roundel disabled"><strong class="below">{{ Limehouse }}</strong></li>
+		<li id="dlr004" class="roundel disabled"><strong class="above">{{ Westferry }}</strong></li>
+		<li id="dlr005" class="roundel disabled"><strong class="below right">{{ Poplar }}</strong></li>
+		<li id="dlr006" class="roundel disabled"><strong class="above">{{ Blackwall }}</strong></li>
+		<li id="dlr007" class="roundel disabled"><strong class="below">{{ East_India }}</strong></li>
+		<li id="dlr008" class="roundel disabled"><strong class="above">{{ Royal_Victoria }}</strong></li>
+		<li id="dlr009" class="roundel disabled"><strong class="above wide right">{{ Custom_House_for_ExCel }}</strong></li>
+		<li id="dlr010" class="roundel disabled"><strong class="above right wide">{{ Prince_Regent }}</strong></li>
+		<li id="dlr011" class="roundel disabled"><strong class="above right wide">{{ Royal_Albert }}</strong></li>
+		<li id="dlr012" class="roundel disabled"><strong class="above right wide">{{ Beckton_Park }}</strong></li>
+		<li id="dlr012a" class="roundel disabled"><strong class="above right wide">{{ Cyprus }}</strong></li>
+		<li id="dlr013" class="roundel disabled"><strong class="below left">{{ Gallions_Reach }}</strong></li>
+		<li id="dlr014" class="roundel disabled"><strong class="below left">{{ Beckton }}</strong></li>
+		<li id="dlr015" class="roundel disabled"><strong class="above right">{{ West_Silvertown }}</strong></li>
+		<li id="dlr016" class="roundel disabled"><strong class="below left wide">{{ Pontoon_Dock }}</strong></li>
+		<li id="dlr017" class="roundel disabled"><strong class="below left wide">{{ London_City_Airport }}</strong></li>
+		<li id="dlr018" class="roundel disabled"><strong class="below left wide">{{ King_George_V }}</strong></li>
+		<li id="dlr018b" class="roundel disabled"><strong class="below">{{ Woolwich_Arsenal }}</strong></li>
+		<li id="dlr019" class="roundel disabled"><strong class="above right">{{ Canning_Town }}</strong></li>
+		<li id="dlr020" class="roundel disabled"><strong class="right">{{ Star_Lane }}</strong></li>
+		<li id="dlr021" class="roundel disabled"><strong class="right">{{ West_Ham }}</strong></li>
+		<li id="dlr022" class="roundel disabled"><strong class="right">{{ Abbey_Road }}</strong></li>
+		<li id="dlr023" class="roundel disabled"><strong class="right">{{ Stratford_High_Street }}</strong></li>
+		<li id="dlr024" class="roundel disabled"><strong class="left above">{{ Stratford_International }}</strong></li>
+		<li id="dlr025" class="roundel disabled"><strong class="below">{{ Pudding_Mill_Lane }}</strong></li>
+		<li id="dlr026" class="roundel disabled"><strong class="left">{{ Bow_Church }}</strong></li>
+		<li id="dlr027" class="roundel disabled"><strong class="right">{{ Devons_Road }}</strong></li>
+		<li id="dlr028" class="roundel disabled"><strong class="right">{{ Langdon_Park }}</strong></li>
+		<li id="dlr029" class="roundel disabled"><strong class="right">{{ All_Saints }}</strong></li>
+		<li id="dlr030" class="roundel disabled"><strong class="right">{{ West_India_Quay }}</strong></li>
+		<li id="dlr031" class="roundel disabled"><strong class="left">{{ Heron_Quays }}</strong></li>
+		<li id="dlr032" class="roundel disabled"><strong class="left">{{ South_Quay }}s</strong></li>
+		<li id="dlr033" class="roundel disabled"><strong class="left">{{ Crossharbour }}</strong></li>
+		<li id="dlr034" class="roundel disabled"><strong class="left">{{ Mudchute }}</strong></li>
+		<li id="dlr035" class="roundel disabled"><strong class="left">{{ Island_Gardens }}</strong></li>
+		<li id="dlr036" class="roundel disabled"><strong class="right">{{ Cutty_Sark_for_Maritime_Greenwich }}</strong></li>
+		<li id="dlr037" class="roundel disabled"><strong class="right">{{ Greenwich }}</strong></li>
+		<li id="dlr038" class="roundel disabled"><strong class="right">{{ Deptford_Bridge }}</strong></li>
+		<li id="dlr039" class="roundel disabled"><strong class="right">{{ Elverson_Road }}</strong></li>
+		<li id="dlr040" class="roundel disabled"><strong class="right">{{ Lewisham }}</strong></li>
+		<li id="dlr041" class="roundel disabled"><strong class="below right">{{ Tower_Gateway }}</strong></li>
+
+		<li id="dlr042" class="route hor"></li>
+		<li id="dlr043" class="route hor rot45"></li>
+		<li id="dlr044" class="route hor rot315"></li>
+		<li id="dlr045" class="route hor"></li>
+		<li id="dlr046" class="route hor rot45"></li>
+		<li id="dlr047" class="route hor rot45"></li>
+		<li id="dlr048" class="route"></li>
+		<li id="dlr049" class="route hor rot45"></li>
+		<li id="dlr050" class="route hor rot315"></li>
+		<li id="dlr051" class="route"></li>
+		<li id="dlr052" class="route bend45deg rot45"></li>
+		<li id="dlr053" class="route bend45deg"></li>
+		<li id="dlr054" class="route bend45deg rot315"></li>
+		<li id="dlr055" class="route bend90deg"></li>
+		<li id="dlr056"></li>
+		<li id="dlr057" class="route bend90deg"></li>
+		<li id="dlr058" class="spacer"></li>
+		<li id="dlr059" class="spacer"></li>
+		<li id="dlr060" class="spacer rot90"></li>
+		<li id="dlr061" class="spacer rot45"></li>
+		<li id="dlr062" class="route bend90deg rot180"></li>
+		<li id="dlr063" class="route bend90deg rot270"></li>
+		<li id="dlr064" class="spacer rot45"></li>
+		<li id="dlr065" class="spacer rot45"></li>
+		<li id="dlr066" class="spacer"></li>
+		<li id="dlr067" class="spacer"></li>
+	</ul>
+
+	<ul id="emirates" class="line">
+		<li id="emi001" class="route hor rot315"></li>
+		<li id="emi002"></li>
+		<li id="emi003"></li>
+		<li id="emi004"></li>
+		<li id="emi005"></li>
+		<li id="emi006"></li>
+		<li id="emi007"></li>
+		<li id="emi008" class="route hor rot315"></li>
+		<li id="emi009" class="route hor"></li>
+		<li id="emi010" class="route hor"></li>
+		<li id="emi011" class="route hor"></li>
+		<li id="emi012" class="route hor"></li>
+		<li id="emi013" class="spacer"></li>
+		<li id="emi014" class="spacer"></li>
+		<li id="emi015" class="roundel disabled navy"><strong class="below right">{{ Emirates_Royal_Docks }}</strong></li>
+		<li id="emi016" class="roundel disabled navy"><strong class="below">{{ Emirates_Greenwich_Peninsula }}</strong></li>
+	</ul>
+
+	<ul class="cablecar-symbol">
+		<li class="body"></li>
+		<li class="left"></li>
+		<li class="right"></li>
+		<li class="window1"></li>
+		<li class="window2"></li>
+		<li class="wire"></li>
+	</ul>
+
+	<!--<ul class="boxes">-->
+		<!--<li id="box001"></li>-->
+		<!--<li id="box002"></li>-->
+		<!--<li id="box003"></li>-->
+		<!--<li id="box004"></li>-->
+		<!--<li id="box005"></li>-->
+		<!--<li id="box006"></li>-->
+		<!--<li id="box007"></li>-->
+		<!--<li id="box008"></li>-->
+		<!--<li id="box009"></li>-->
+		<!--<li id="box010"></li>-->
+		<!--<li id="box011"></li>-->
+		<!--<li id="box012"></li>-->
+		<!--<li id="box013"></li>-->
+		<!--<li id="box014"></li>-->
+		<!--<li id="box015"></li>-->
+		<!--<li id="box016"></li>-->
+		<!--<li id="box017"></li>-->
+		<!--<li id="box018"></li>-->
+		<!--<li id="box019"></li>-->
+		<!--<li id="box020"></li>-->
+		<!--<li id="box021"></li>-->
+		<!--<li id="box022"></li>-->
+		<!--<li id="box023"></li>-->
+		<!--<li id="box024"></li>-->
+		<!--<li id="box025"></li>-->
+		<!--<li id="box026"></li>-->
+		<!--<li id="box027"></li>-->
+		<!--<li id="box028"></li>-->
+		<!--<li id="box029"></li>-->
+		<!--<li id="box030"></li>-->
+		<!--<li id="box031"></li>-->
+		<!--<li id="box032"></li>-->
+	<!--</ul>-->
+
+	<ul class="links">
+		<li id="lin001"><strong class="right-stop"></strong></li>
+		<li id="lin002" class="rot315"><strong class="right-stop"></strong><strong class="left-stop"></strong></li>
+		<li id="lin003" class="rot315"></li>
+		<li id="lin004" class="rot90"><strong class="right-stop"></strong><strong class="left-stop"></strong></li>
+		<li id="lin005" class="rot45"><strong class="right-stop"></strong><strong class="centre-stop"></strong><strong class="left-stop"></strong></li>
+		<li id="lin006" class="rot45"><strong class="left-stop"></strong></li>
+		<li id="lin007" class="rot315"><strong class="left-stop"></strong></li>
+		<li id="lin008" class="rot315"><strong class="right-stop"></strong><strong class="left-stop"></strong></li>
+		<li id="lin009" class="rot90"></li>
+		<li id="lin010" class="rot90"><strong class="right-stop"></strong><strong class="left-stop"></strong></li>
+		<li id="lin011" class="rot90"><strong class="right-stop"></strong><strong class="left-stop"></strong></li>
+		<li id="lin012" class="rot315"><strong class="left-stop"></strong></li>
+		<li id="lin013" class="rot90"></li>
+		<li id="lin014"></li>
+		<li id="lin015" class="rot45"></li>
+		<li id="lin016" class="rot315"></li>
+		<li id="lin017" class="rot45"><strong class="right-stop"></strong><strong class="left-stop"></strong><strong class="centre-stop"></strong></li>
+		<li id="lin018" class="rot45"><strong class="right-stop"></strong></li>
+		<li id="lin019" class="rot315"></li>
+		<li id="lin020" class="rot45"></li>
+		<li id="lin021" class="rot45"><strong class="right-stop"></strong><strong class="left-stop"></strong></li>
+		<li id="lin022"><strong class="right-stop"></strong><strong class="left-stop"></strong></li>
+		<li id="lin023" class="rot90"><strong class="right-stop"></strong><strong class="left-stop"></strong></li>
+		<li id="lin024" class="rot90"></li>
+		<li id="lin025" class="rot45"><strong class="right-stop"></strong></li>
+		<li id="lin026" class="rot45"><strong class="right-stop"></strong><strong class="left-stop"></strong></li>
+		<li id="lin027"><strong class="right-stop"></strong></li>
+		<li id="lin028" class="rot90"><strong class="right-stop"></strong><strong class="left-stop"></strong></li>
+		<li id="lin029" class="rot45"><strong class="right-stop"></strong></li>
+		<li id="lin030"></strong></li>
+		<li id="lin031" class="rot90"></li>
+		<li id="lin032"><strong class="right-stop"></strong></li>
+	</ul>
+
+</section>
+
+<script type="text/javascript" src="{% static 'js/jquery-1.9.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/symbols.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/scroll-position.js' %}"></script>
+
+<script>
+	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+</script>
+</body>
+
+</html>

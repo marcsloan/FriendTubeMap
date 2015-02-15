@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+        <link href="{% static 'css/bootstrap-marketing-adj.css' %}" rel="stylesheet">
+        <link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet">
+        <link href="{% static 'css/socialunderground.css' %}" rel="stylesheet">
+
+        <title>The Social Undergound</title>
+
+    </head>
+
+    <body>
+
+
+    <div class="jumbotron">
+        <h1>About</h1>
+        <a href="/frontpage/"><img src="{% static 'Logo-small.png' %}" alt="The Social Underground" /></a>
+        <p class="lead">Putting your Facebook friends on the London Underground</p>
+        <p>A mashup created by <a href="http://mediafutures.cs.ucl.ac.uk/people/MarcSloan/">Marc Sloan</a> that takes a person's social
+        network from Facebook and puts their friends as station names on the London Underground map. Check out the <a href="https://github.com/marcsloan/FriendTubeMap">GitHub</a> page.</p>
+        <p>Credit goes to a number of open source projects without which this project would not have been possible:</p>
+        <p>The tube map is a customized version of John Galantini's awesome <a href="http://www.csstubemap.co.uk/">CSS Tube Map</a></p>
+        <p>Grabbing social data would not be possible without the great <a href="http://snacourse.com/getnet/">NetGet</a> resource. Sadly Facebook will be removing this functionality in April
+        so this site won't be around for very long :(</p>
+        <p>The website was built using the excellent <a href="www.tangowithdjango.com/">Tango With Django</a> online resource</p>
+        <p>The graph package used was <a href="https://networkx.github.io/">NetworkX</a> and I used Thomas Aynaud's <a href="http://perso.crans.org/aynaud/communities/">community</a>
+            package to find friend communities within the social network</p>
+    </div>
+
+
+    <script src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/socialunderground.js' %}"></script>
+
+    </body>
+
+</html>

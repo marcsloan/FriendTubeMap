@@ -1,0 +1,383 @@
+#central .route,
+#central .station{
+    background-color: #ee2e24; 
+    z-index: 10;
+}
+#cen001{
+	top: 315px;
+	left: 376px;
+}
+#cen001 .rail-symbol{
+	top: 1px;
+	left: -24px;
+}
+#cen002{
+	top: 347px;
+	left: 388px;
+	height: 556px;
+	position: relative;
+}
+#cen003{
+	top: 550px;
+	left: 380px;
+}
+#cen004{
+	top: 645px;
+	left: 376px;
+}
+#cen004 .rail-symbol{
+	top: 1px;
+	left: -28px;
+}
+#cen005{
+	top: 772px;
+	left: 380px;
+}
+#cen006{
+	top: 924px;
+	left: 405px;
+}
+#cen006 strong{
+	top: 5px;
+}
+#cen006 .rail-symbol{
+	left: -25px;
+	top: 2px;
+}
+#cen007{
+	top: 1034px;
+	left: 502px;
+}
+#cen008{
+	top: 1121px;
+	left: 589px;
+}
+#cen009{
+	top: 1351px;
+	left: 539px;
+}
+#cen009 strong{
+	right: 33px;
+	top: 0px;
+}
+#cen009 .rail-symbol{
+	left: -27px;
+	top: 1px;
+}
+#cen010{
+	top: 1368px;
+	left: 757px;
+}
+#cen011{
+	top: 1368px;
+	left: 927px;
+}
+#cen011 strong{
+	top: 0px;
+	width: 61px;
+	left: 25px;
+}
+#cen012{
+	top: 1351px;
+	left: 980px;
+}
+#cen013{
+	top: 1345px;
+	left: 1056px;
+}
+#cen014{
+	top: 1345px;
+	left: 1204px;
+}
+#cen014 .rail-symbol{
+	top: 22px;
+	left: 92px;
+}
+#cen015{
+	top: 1368px;
+	left: 1305px;
+}
+#cen016{
+	top: 1345px;
+	left: 1378px;
+}
+#cen016 strong{
+	left: 79px;
+	top: -52px;
+	text-align: left;
+	width: 95px;
+}
+#cen017{
+	top: 1368px;
+	left: 1495px;
+}
+#cen018{
+	top: 1351px;
+	left: 1574px;
+}
+#cen019{
+	top: 1368px;
+	left: 1642px;
+}
+#cen020{
+	top: 1345px;
+	left: 1717px;
+}
+#cen020 strong{
+	top: -42px;
+	left: -63px;
+	text-align: right;
+}
+#cen021{
+	top: 1345px;
+	left: 1845px;
+}
+#cen021 strong{
+	top: -42px;
+	left: -60px;
+	text-align: right;
+}
+#cen022{
+	top: 1345px;
+	left: 2042px;
+}
+#cen022 strong{
+	text-align: right;
+	top: 24px;
+	left: -62px;
+}
+#cen023{
+	top: 1345px;
+	left: 2145px;
+}
+#cen023 strong{
+	left: 68px;
+	top: 25px;
+}
+#cen024{
+	top: 1351px;
+	left: 2282px;
+}
+#cen025{
+	top: 1378px;
+	left: 2342px;
+}
+#cen026{
+	top: 1421px;
+	left: 2447px;
+}
+#cen026 .cross-symbol{
+	top: 8px;
+	left: 13px;
+}
+#cen027{
+	top: 1297px;
+	left: 2658px;
+}
+#cen028{
+	top: 1189px;
+	left: 2992px;
+}
+#cen029{
+	top: 1185px;
+	left: 3091px;
+}
+#cen030{
+	top: 919px;
+	left: 3399px;
+}
+#cen030 .rail-symbol{
+	top: 3px;
+	left: 99px;
+}
+#cen031{
+	top: 806px;
+	left: 3442px;
+}
+#cen032{
+	top: 682px;
+	left: 3442px;
+}
+#cen032 strong{
+	top: -18px;
+	padding-right: 13px;
+	right: -2px;
+}
+#cen033{
+	top: 519px;
+	left: 3442px;
+}
+#cen034{
+	top: 464px;
+	left: 3442px;
+}
+#cen035{
+	top: 396px;
+	left: 3437px;
+}
+#cen036{
+	top: 239px;
+	left: 3442px;
+}
+#cen037{
+	top: 192px;
+	left: 3442px;
+}
+#cen038{
+	top: 146px;
+	left: 3442px;
+}
+#cen039{
+	top: 100px;
+	left: 3442px;
+}
+#cen040{
+	top: 40px;
+	left: 3438px;
+}
+#cen041{
+	top: 315px;
+	left: 3502px;
+}
+#cen042{
+	top: 337px;
+	left: 3581px;
+}
+#cen043{
+	top: 320px;
+	left: 3636px;
+}
+#cen044{
+	top: 373px;
+	left: 3696px;
+}
+#cen045{
+	top: 440px;
+	left: 3700px;
+}
+#cen046{
+	top: 493px;
+	left: 3700px;
+}
+#cen047{
+	top: 547px;
+	left: 3700px;
+}
+#cen048{
+	top: 628px;
+	left: 3649px;
+}
+#cen049{
+	top: 611px;
+	left: 3584px;
+}
+#cen050{
+	top: 628px;
+	left: 3518px;
+}
+#cen051{
+	top: 1358px;
+	left: 568px;
+	width: 1740px;
+	z-index: -1 !important;
+}
+#cen052{
+	top: 913px;
+	left: 400px;
+	width: 628px;
+}
+#cen053{
+	top: 902px;
+	left: 384px;
+}
+#cen054{
+	top: 1345px;
+	left: 827px;
+	z-index: -1 !important;
+}
+#cen055{
+	top: 1363px;
+	left: 2325px;
+	width: 96px;
+	z-index: 11 !important;
+}
+#cen056{
+	top: 1358px;
+	left: 2303px;
+}
+#cen057{
+	top: 1433px;
+	left: 2406px;
+	width: 132px;
+}
+#cen058{
+	top: 1433px;
+	left: 2549px;
+	width: 324px;
+}
+#cen059{
+	top: 1420px;
+	left: 2377px;
+}
+#cen060{
+	top: 1420px;
+	left: 2536px;
+}
+#cen061{
+	top: 1197px;
+	left: 2801px;
+	width: 335px;
+}
+#cen062{
+	top: 1197px;
+	left: 2772px;
+}
+#cen063{
+	top: 1184px;
+	left: 3135px;
+}
+#cen064{
+	top: 1194px;
+	left: 3151px;
+	width: 419px;
+}
+#cen065{
+	top: 53px;
+	left: 3450px;
+	height: 833px;
+}
+#cen066{
+	top: 886px;
+	left: 3433px;
+}
+#cen067{
+	top: 619px;
+	left: 3480px;
+	width: 207px;
+}
+#cen068{
+	top: 328px;
+	left: 3480px;
+	width: 207px;
+}
+#cen069{
+	top: 358px;
+	left: 3708px;
+	height: 240px;
+}
+#cen070{
+	top: 328px;
+	left: 3687px;
+}
+#cen071{
+	top: 328px;
+	left: 3450px;
+}
+#cen072{
+	top: 619px;
+	left: 3450px;
+}
+#cen073{
+	top: 598px;
+	left: 3687px;
+}

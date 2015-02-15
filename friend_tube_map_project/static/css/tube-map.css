@@ -1,0 +1,983 @@
+@font-face {
+    font-family: 'london_tubenormal';
+    src: url('../font/london-tube-webfont.eot');
+    src: url('../font/london-tube-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/london-tube-webfont.woff') format('woff'),
+         url('../font/london-tube-webfont.ttf') format('truetype'),
+         url('../font/london-tube-webfont.svg#london_tubenormal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    background: white;
+    font-family: 'london_tubenormal';
+}
+#map-container{
+    width: 4104px;
+    overflow: hidden;
+    display: block;
+    height: 2735px;
+    position: relative;
+    margin-top: 60px;
+}
+.line{
+    z-index: 1;
+}
+.line li{
+    position: absolute;
+    text-align: center;
+}
+.route{
+    width: 10px;
+    height: 10px;
+}
+.diagonal{
+    -webkit-transform:rotate(45deg);
+    -webkit-transform-origin: 0% 0%;
+    -moz-transform:rotate(45deg);
+    -moz-transform-origin: 0% 0%;
+}
+.roundel{
+    height: 30px;
+    width: 30px;
+    display: block;
+    background: #fff;
+    border: 2px solid #1c3f95;
+    border-radius: 50px;
+    z-index: 100 !important;
+    line-height: 30px;
+}
+.roundel.disabled{
+    z-index: 101 !important;
+}
+.connection{
+    height: 22px;
+    width: 22px;
+    display: block;
+    background: #fff;
+    border: 6px solid #000;
+    line-height: 22px;
+}
+.station{
+    height: 7px;
+    width: 8px;
+    display: block;
+    line-height: 7px;
+}
+.station.vertical{
+    height: 8px;
+    width: 7px;
+    line-height: 16px;
+}
+strong{
+    white-space: nowrap;
+    color: #1c3f95;
+    font-size: 22px;
+    position: absolute;
+    line-height: 20px;
+    z-index: 30;
+}
+strong.boxed{
+    border: 3px solid transparent;
+    padding: 8px 6px;
+}
+strong.below,
+strong.above{
+    line-height: 20px;
+    text-align: center;
+    white-space: normal;
+    width: 118px;
+    margin-left: -61px;
+}
+strong.wide{
+    white-space: nowrap;
+    width: auto;
+}
+strong.below{
+    top: 12px;
+}
+strong.above{
+    top: -47px;
+}
+strong.left{
+    text-align: right;
+    right: 14px;
+}
+.station strong.left,
+.station strong.right{
+    top: -7px;
+}
+.station strong.two-lines{
+    top: -17px;
+}
+.roundel strong.left{
+    right: 37px;
+    top: 2px;
+}
+.roundel strong.right{
+    top: 5px;
+    left: 36px;
+}
+.roundel strong.right.above{
+    top: -19px;
+    left: 88px;
+}
+.roundel strong.left.above{
+    top: -42px;
+    right: 29px;
+}
+strong.right{
+    text-align: left;
+    left: 15px;
+}
+.roundel strong.right{
+    left: 36px;
+}
+.roundel strong.above{
+    top: -49px;
+}
+.roundel strong.below{
+   top: 37px;
+}
+.roundel strong.below.right{
+    top: 8px;
+    left: 94px;
+}
+
+.rot45{
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+}
+.rot45 strong.above{
+    -webkit-transform-origin: 0% 0%;
+    -webkit-transform: rotate(315deg);
+    -moz-transform-origin: 0% 0%;
+    -moz-transform: rotate(315deg);
+    margin-top: -32px;
+}
+.rot45 strong.left{
+    right: 7px;
+    top: -13px;
+    -webkit-transform-origin: 100% 100%;
+    -webkit-transform: rotate(315deg);
+    -moz-transform-origin: 100% 100%;
+    -moz-transform: rotate(315deg);
+}
+.rot45 strong.below.right{
+    left: 41px;
+    top: -134px;
+    -webkit-transform-origin: 100% 100%;
+    -webkit-transform: rotate(315deg);
+    -moz-transform-origin: 100% 100%;
+    -moz-transform: rotate(315deg);
+}
+.rot90{
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+}
+.rot135{
+    -webkit-transform:rotate(135deg);
+    -moz-transform:rotate(135deg);
+}
+.rot180{
+    -webkit-transform:rotate(180deg);
+    -moz-transform:rotate(180deg);
+}
+.rot270{
+    -webkit-transform:rotate(270deg);
+    -moz-transform:rotate(270deg);
+}
+.rot315{
+    -webkit-transform:rotate(315deg);
+    -moz-transform:rotate(315deg);
+}
+.rot315 strong{
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+}
+.rot315 strong.left{
+    top: -7px;
+    right: 25px;
+    -webkit-transform-origin: 100% 100%;
+    -moz-transform-origin: 100% 100%;
+}
+.rot315 strong.right{
+    top: -7px;
+    left: 21px;
+    -webkit-transform-origin: 0% 0%;
+    -moz-transform-origin: 0% 0%;
+}
+.rot315.connection strong.left{
+    right: 46px;
+}
+.rot315.connection strong.right{
+    left: 46px;
+}
+.bend45deg{
+    height: 23px;
+    width: 31px;
+    border-radius: 0 23px 0 0;
+    z-index: 9 !important;
+}
+.bend45deg:after{
+    height: 60px;
+    width: 60px;
+    content: '';
+    background-color: #fff;
+    position: absolute;
+    top: 10px;
+    left: -29px;
+    border-radius: 95px;
+    z-index: 11;
+}
+.bend45deg.flipped{
+    border-radius: 0 0 23px 0;
+}
+.bend45deg.flipped:after{
+    bottom: 10px;
+    top: auto;
+}
+.bend90deg{
+    height: 31px;
+    width: 31px;
+    border-radius: 0 31px 0 0;
+    z-index: 9 !important;
+}
+.bend90deg:after{
+    height: 40px;
+    width: 40px;
+    content: '';
+    background-color: #fff;
+    position: absolute;
+    top: 10px;
+    left: -19px;
+    border-radius: 95px;
+    z-index: 11;
+}
+#overground .bend90deg{
+    border: 3px solid #f58026 !important;
+    border-width: 3px 3px 0 0 !important;
+}
+#overground .bend90deg:after{
+    border: 3px solid #f58026;
+    top: 4px;
+    left: 0px;
+    width: 21px;
+    height: 21px;
+    border-radius: 0 40px 0 0;
+    border-width: 3px 3px 0 0 !important;
+}
+.chevron{
+    height: 20px;
+    width: 5px;
+    background-color: #fff !important;
+    display: block;
+}
+.chevron:before{
+    position: absolute;
+    content: '';
+    top: 0px;
+    left: 0px;
+    height: 20px;
+    width: 5px;
+    margin-left: -5px;
+    background-color: #fff;
+    display: block;
+    -webkit-transform-origin: 100% 100%;
+    -webkit-transform:rotate(90deg);
+    -moz-transform-origin: 100% 100%;
+    -moz-transform:rotate(90deg);
+}
+.spacer{
+    background-color: white;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    z-index: 49;
+    display: block;
+}
+.rail-symbol{
+    height: 15px;
+    width: 23px;
+    position: absolute;
+    top: 4px;
+    left: -32px;
+    overflow: hidden;
+}
+.rail-symbol li{
+    height: 3px;
+    background: #ee2e24;
+    display: block;
+    position: absolute;
+}
+.rail-symbol li.hor{
+    width: 100%;
+    top: 3px;
+}
+.rail-symbol li.hor2{
+    width: 100%;
+    top: 9px;
+}
+.rail-symbol li.diag,
+.rail-symbol li.diag2{
+    width: 13px;
+    height: 2px;
+    -webkit-transform: rotate(26deg);
+    -moz-transform: rotate(26deg);
+    left: 4px;
+}
+.rail-symbol li.diag2{
+    left: 7px;
+    bottom: 0;
+}
+.rail-symbol li.diag3{
+    width: 13px;
+    height: 2px;
+    -webkit-transform: rotate(-26deg);
+    -moz-transform: rotate(-26deg);
+    left: 6px;
+    top: 6px;
+}
+.cross-symbol{
+    height: 30px;
+    width: 16px;
+    position: absolute;
+    overflow: hidden;
+}
+.cross-symbol li.hor{
+    height: 2px;
+    width: 12px;
+    background-color: #ee2e24;
+    left: 2px;
+    top: 8px;
+    position: absolute;
+    border-radius: 20px;
+}
+.cross-symbol li.vert{
+    height: 26px;
+    width: 2px;
+    background-color: #ee2e24;
+    left: 7px;
+    top: 2px;
+    position: absolute;
+    border-radius: 20px;
+}
+.cross-symbol li.hor:before{
+    content: '';
+    height: 4px;
+    width: 4px;
+    border-radius: 100%;
+    background-color: #ee2e24;
+    display: block;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+}
+.cross-symbol li.hor:after{
+    content: '';
+    height: 4px;
+    width: 4px;
+    border-radius: 100%;
+    background-color: #ee2e24;
+    display: block;
+    position: absolute;
+    right: -1px;
+    top: -1px;
+}
+.cross-symbol li.vert:before{
+    content: '';
+    height: 4px;
+    width: 6px;
+    border-radius: 100%;
+    background-color: #ee2e24;
+    display: block;
+    position: absolute;
+    left: -2px;
+    top: -1px;
+}
+.cross-symbol li.vert:after{
+    content: '';
+    height: 0;
+    width: 0;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-top: 11px solid #ee2e24;
+    display: block;
+    position: absolute;
+    left: -1px;
+    top: 11px;
+}
+
+
+.cablecar-symbol{
+    top: 1594px;
+    left: 3549px;
+    height: 31px;
+    width: 20px;
+    display: block;
+    position: absolute;
+}
+.cablecar-symbol li{
+    position: absolute;
+    display: block;
+}
+
+.cablecar-symbol .body{
+    height: 18px;
+    width: 12px;
+    top: 10px;
+    left: 4px;
+    background-color: #1c3f95;
+}
+.cablecar-symbol .left{
+    content: '';
+    height: 0;
+    width: 0;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    border-right: 2px solid #1c3f95;
+    top: 10px;
+    left: 2px;
+}
+.cablecar-symbol .right{
+    content: '';
+    height: 0;
+    width: 0;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    border-left: 2px solid #1c3f95;
+    top: 10px;
+    right: 2px;
+}
+.cablecar-symbol .window1,
+.cablecar-symbol .window2{
+    content: '';
+    height: 6px;
+    width: 4px;
+    background: #fff;
+    top: 12px;
+    left: 5px;
+}
+.cablecar-symbol .window2{
+    top: 12px;
+    left: 11px;
+}
+.cablecar-symbol .wire{
+    top: 8px;
+    left: 6px;
+    background: #1c3f95;
+    height: 2px;
+    width: 10px;
+    -webkit-transform: rotate(-31deg);
+    -moz-transform: rotate(-31deg);
+    border-radius: 0 0 5px 0;
+    z-index: -1;
+}
+.cablecar-symbol .wire:before{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 6px;
+    background: #1c3f95;
+    height: 2px;
+    width: 6px;
+    -webkit-transform: rotate(78deg);
+    -moz-transform: rotate(78deg);
+    border-radius: 0 5px 0 0;
+}
+.cablecar-symbol .wire:after{
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 5px;
+    background: #1c3f95;
+    height: 2px;
+    width: 7px;
+    -webkit-transform: rotate(-12deg);
+    -moz-transform: rotate(-12deg);
+    border-radius: 11px 11px 0 0;
+}
+
+.disabled-symbol{
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    z-index: 102 !important;
+    border-radius: 100%;
+    border: 2px solid #1c3f95;
+    top: -2px;
+    left: -2px;
+}
+.disabled-symbol li{
+    position: absolute;
+    display: block;
+    background-color: #1c3f95;
+}
+.linked .disabled-symbol:before{
+    background-color: #fff;
+    width: 14px;
+    height: 33px;
+    z-index: -1;
+    top: -1px;
+    left: 8px;
+    display: block;
+    position: absolute;
+    content: '';
+}
+.disabled-symbol .wheel{
+    height: 13px;
+    width: 13px;
+    border-radius: 100%;
+    background-color: transparent;
+    border: 2px solid #1c3f95;
+    top: 10px;
+    left: 7px;
+    z-index: 1;
+}
+.disabled-symbol .wheel:before{
+    content: '';
+    background: #fff;
+    height: 9px;
+    width: 13px;
+    display: block;
+    top: -3px;
+    left: -3px;
+    position: absolute;
+    z-index: 2;
+}
+.disabled-symbol .legs{
+    width: 9px;
+    height: 2px;
+    top: 19px;
+    left: 2px;
+    z-index: 3;
+    -webkit-transform: rotate(-249deg);
+    -moz-transform: rotate(-249deg);
+    border-radius: 2px;
+}
+.disabled-symbol .arms{
+    width: 10px;
+    height: 2px;
+    top: 11px;
+    left: 9px;
+    z-index: 3;
+}
+.disabled-symbol .thighs{
+    width: 10px;
+    height: 3px;
+    top: 15px;
+    left: 8px;
+    z-index: 3;
+    border-radius: 0 0 2px 0;
+}
+.disabled-symbol .back{
+    width: 3px;
+    height: 8px;
+    top: 8px;
+    left: 16px;
+    z-index: 3;
+    border-radius: 2px 2px 0 0;
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+}
+.disabled-symbol .back:before{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #1c3f95;
+    border-radius: 100%;
+    top: -5px;
+    left: -1px;
+    z-index: 3;
+}
+
+.navy .disabled-symbol,
+#dlr .disabled-symbol,
+.navy .disabled-symbol .wheel:before,
+#dlr .disabled-symbol .wheel:before,
+.navy .disabled-symbol .wheel,
+#dlr .disabled-symbol .wheel{
+    background-color: #1c3f95;
+}
+.navy .disabled-symbol li,
+#dlr .disabled-symbol li,
+.navy .disabled-symbol li:before,
+#dlr .disabled-symbol li:before{
+    background-color: #fff;
+}
+.navy .disabled-symbol .wheel,
+#dlr .disabled-symbol .wheel{
+    border-color: #fff;
+}
+
+.boat-symbol{
+    width: 34px;
+    height: 19px;
+    display: block;
+    position: absolute;
+    overflow: hidden;
+}
+.boat-symbol li{
+    background-color: #1c3f95;
+    display: block;
+    position: absolute;
+}
+.boat-symbol li.hull{
+    top: 8px;
+    left: 1px;
+    width: 31px;
+    height: 6px;
+}
+.boat-symbol li.hull:before{
+    top: 0px;
+    left: -8px;
+    width: 10px;
+    height: 10px;
+    content: '';
+    display: block;
+    background: #fff;
+    position: absolute;
+    -webkit-transform: rotate(-35deg);
+    -moz-transform: rotate(-35deg);
+}
+.boat-symbol li.hull:after{
+    top: -4px;
+    left: 29px;
+    width: 10px;
+    height: 10px;
+    content: '';
+    display: block;
+    background: #fff;
+    position: absolute;
+    -webkit-transform: rotate(-22deg);
+    -moz-transform: rotate(-22deg);
+}
+.boat-symbol li.cabin{
+    top: 4px;
+    left: 7px;
+    width: 19px;
+    height: 6px;
+    border-radius: 1px 1px 0 0;
+}
+.boat-symbol li.cabin:after{
+    content: '';
+    top: 1px;
+    left: 17px;
+    width: 3px;
+    height: 5px;
+    border-radius: 0 1px 0 0;
+    background-color: #1c3f95;
+    display: block;
+    position: absolute;
+}
+.boat-symbol li.cabin:before{
+    content: '';
+    top: 1px;
+    left: -3px;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-right: 3px solid #1c3f95;
+    display: block;
+    position: absolute;
+}
+.boat-symbol li.top{
+    height: 2px;
+    width: 9px;
+    top: 3px;
+    left: 11px;
+}
+.boat-symbol li.top:before{
+    content: '';
+    position: absolute;
+    display: block;
+    height: 3px;
+    width: 3px;
+    border-radius: 100% 100% 0 0;
+    top: -2px;
+    left: 2px;
+    background-color: #1c3f95;
+}
+.boat-symbol li.window{
+    height: 2px;
+    width: 3px;
+    background-color: #fff;
+    top: 6px;
+    left: 7px;
+    border-radius: 3px 0 0 0;
+}
+.boat-symbol li.window1{
+    height: 2px;
+    width: 4px;
+    background-color: #fff;
+    top: 6px;
+    left: 11px;
+}
+.boat-symbol li.window2{
+    height: 2px;
+    width: 4px;
+    background-color: #fff;
+    top: 6px;
+    left: 16px;
+}
+.boat-symbol li.window3{
+    height: 2px;
+    width: 5px;
+    background-color: #fff;
+    top: 6px;
+    left: 21px;
+    border-radius: 0 2px 0 0;
+}
+.boat-symbol li.wave,
+.boat-symbol li.wave2{
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    border-radius: 100%;
+    top: 12px;
+    left: 0;
+}
+.boat-symbol li.wave2{
+    left: 13px;
+}
+.boat-symbol li.bwave,
+.boat-symbol li.bwave2{
+    width: 13px;
+    height: 7px;
+    background: transparent;
+    border: 2px solid #1c3f95;
+    border-radius: 100%;
+    top: 13px;
+    left: 4px;
+}
+.boat-symbol li.bwave2{
+    left: 17px;
+}
+.boat-symbol li.bwave3{
+    background-color: #fff;
+    height: 10px;
+    width: 35px;
+    display: block;
+    position: absolute;
+    content: '';
+    top: 16px;
+    left: 0;
+    z-index: 20;
+    overflow: hidden;
+}
+.boat-symbol li.bwave3:before{
+    width: 2px;
+    height: 3px;
+    background: transparent;
+    border: 2px solid #1c3f95;
+    border-radius: 100%;
+    top: -6px;
+    left: 16px;
+    content: '';
+    display: block;
+    position: absolute;
+}
+.tram-symbol{
+    display: block;
+    width: 35px;
+    height: 18px;
+    position: absolute;
+}
+.tram-symbol .carriage{
+    width: 31px;
+    height: 10px;
+    background: #1c3f95;
+    top: 5px;
+    position: absolute;
+    left: 2px;
+    border-radius: 3px 3px 0 0;
+}
+.tram-symbol .door1,
+.tram-symbol .door2{
+    height: 8px;
+    width: 3px;
+    background: #fff;
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    display: block;
+}
+.tram-symbol .door2{
+    left: 24px;
+}
+.tram-symbol .window1,
+.tram-symbol .window2,
+.tram-symbol .window3,
+.tram-symbol .window4{
+    height: 3px;
+    width: 3px;
+    background: #fff;
+    position: absolute;
+    top: 6px;
+    display: block;
+}
+.tram-symbol .window1{
+    border-radius: 2px 0 0 0;
+    left: 3px;
+}
+.tram-symbol .window2{
+    left: 13px;
+    width: 4px;
+}
+.tram-symbol .window3{
+    left: 18px;
+    width: 4px;
+}
+.tram-symbol .window4{
+    border-radius: 0 2px 0 0;
+    left: 29px;
+}
+.tram-symbol .conductor{
+    width: 3px;
+    height: 3px;
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 15px;
+    background: transparent;
+    border: 1px solid #1c3f95;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+}
+.tram-symbol .wheel1,
+.tram-symbol .wheel2,
+.tram-symbol .wheel3,
+.tram-symbol .wheel4{
+    width: 2px;
+    height: 2px;
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 7px;
+    border-radius: 100%;
+    background: #1c3f95;
+}
+.tram-symbol .wheel2{
+    left: 12px;
+}
+.tram-symbol .wheel3{
+    left: 21px;
+}
+.tram-symbol .wheel4{
+    left: 26px;
+}
+
+
+.plane-symbol{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+}
+.plane-symbol .fuselage{
+    height: 17px;
+    width: 2px;
+    background-color: #1c3f95;
+    top: 4px;
+    position: absolute;
+    left: 11px;
+}
+.plane-symbol .fuselage:before{
+    position: absolute;
+    content: '';
+    height: 10px;
+    width: 2px;
+    display: block;
+    background-color: #1c3f95;
+    top: -2px;
+    left: 0;
+    border-radius: 100%;
+}
+.plane-symbol .tail{
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 4px solid #1c3f95;
+    top: 18px;
+    position: absolute;
+    left: 8px;
+}
+.plane-symbol .tail:before{
+    content: '';
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 2px solid #fff;
+    top: 3px;
+    position: absolute;
+    left: -3px;
+}
+.plane-symbol .wing1{
+    border-left: 15px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 6px solid #1c3f95;
+    top: 10px;
+    position: absolute;
+    left: -2px;
+    z-index: -1;
+    -webkit-transform: rotate(-19deg);
+    -moz-transform: rotate(-19deg);
+}
+.plane-symbol .wing2{
+    border-right: 15px solid transparent;
+    border-left: 0px solid transparent;
+    border-bottom: 6px solid #1c3f95;
+    top: 10px;
+    position: absolute;
+    left: 11px;
+    z-index: -1;
+    -webkit-transform: rotate(19deg);
+    -moz-transform: rotate(19deg);
+}
+.plane-symbol .wing1:after{
+    content: '';
+    height: 5px;
+    width: 5px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 1;
+    left: -16px;
+    top: 2px;
+}   
+.plane-symbol .wing2:after{
+    content: '';
+    height: 5px;
+    width: 5px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 1;
+    right: -16px;
+    top: 2px;
+}
+.boxes li{
+    border: 3px solid #ccc;
+    background-color: #fff;
+    height: 10px;
+    width: 10px;
+    display: block;
+    position: absolute;
+    height: 37px;
+    z-index: -10;
+}
+.links li{
+    height: 6px;
+    width: 100px;
+    border: 3px solid #000;
+    border-width: 5px 0;
+    background-color: #fff;
+    display: block;
+    position: absolute;
+    z-index: 100;
+}
+.links strong{
+    height: 22px;
+    width: 22px;
+    border-radius: 100%;
+    background: #fff;
+    display: block;
+    position: absolute;
+}

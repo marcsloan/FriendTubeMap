@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+        <link href="{% static 'css/bootstrap-marketing-adj.css' %}" rel="stylesheet">
+        <link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet">
+        <link href="{% static 'css/socialunderground.css' %}" rel="stylesheet">
+
+        <title>The Social Undergound</title>
+
+    </head>
+
+    <body>
+
+
+    <div class="jumbotron">
+        <h1>Feedback</h1>
+        <img src="{% static 'Logo-small.png' %}" alt="The Social Underground" />
+        <p class="lead">Putting your Facebook friends on the London Underground</p>
+<form id="feedback_form" method="post" action="feedback.html">
+
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+
+            {% for field in form.visible_fields %}
+                {{ field.errors }}
+                {{ field.help_text }}
+                <p>{{ field }}</p>
+            {% endfor %}
+
+            <input type="submit" name="submit" value="Submit" />
+        </form>
+
+        <p>A number of different algorithms are used to map your friends to Tube stations, each involving some level of randomization. If you're unhappy with the map then
+        try <a href="./reload/">reloading</a> it a few times until you're happy.</p>
+    </div>
+
+
+    <script src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/socialunderground.js' %}"></script>
+
+    </body>
+
+</html>

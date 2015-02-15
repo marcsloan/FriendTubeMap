@@ -1,0 +1,111 @@
+
+header{
+	background-color: #1c3f95;
+	height: 70px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: auto;
+	z-index: 500;	
+}
+header a{
+	color: #fff;
+	text-decoration: none;
+	cursor: pointer;
+}
+header nav{
+	float: right;
+	margin-top: 13px;
+}
+header li{
+	float: left;
+	margin-left: 10px;
+	position: relative;
+	overflow: hidden;
+}
+header li a{
+	display: block;
+	border: 4px solid #fff;
+	height: 36px;
+	width: 36px;
+	border-radius: 100%;
+	text-indent: -9999px;
+	z-index: 2;
+	opacity: 0.3;
+}
+h1{
+	font-size: 30px;
+	margin-top: 20px;
+	float: left;
+}
+h1 small{
+	font-size: 15px;
+	opacity: 0.3;
+}
+header li.info:after{
+	content: 'i';
+	position: absolute;
+	font-family: georgia;
+	top: 8px;
+	left: 17px;
+	color: #fff;
+	font-size: 30px;
+	font-style: italic;
+	z-index: -1;
+}
+header li.john a{
+	background-image: url(../johngalantini.jpg);
+}
+header li.beck a{
+	background-image: url(../harrybeck.jpg);
+}
+header li.twitter:after{
+	background: url(../twitter.png) no-repeat;
+	content: '';
+	height: 21px;
+	width: 24px;
+	position: absolute;
+	top: 12px;
+	left: 11px;
+	z-index: -1;
+	display: block;
+}
+header li:hover a{
+	opacity: 1;
+}
+.wrapper{
+	min-width: 640px;
+	max-width: 1280px;
+	margin: 0 auto;
+	position: relative;
+	padding: 0 30px;
+	box-sizing: border-box;
+}
+#info{
+	margin-top: 120px;
+}
+#info h2{
+	font-size: 50px;
+	color: #1c3f95;
+	margin-bottom: 30px;
+}
+#info h3{
+	font-size: 30px;
+	color: #000;
+	margin-bottom: 20px;
+}
+#info p{
+	line-height: 40px;
+	margin-bottom: 30px;
+	font-size: 22px;
+	color: #1c3f95;
+}
+.twitter-share-button{
+	position: absolute;
+	top: 24px;
+	right: 240px;
+}
+#screenshot{
+	display: none;
+}
